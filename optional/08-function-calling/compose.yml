@@ -1,0 +1,40 @@
+# docker compose up --build --no-log-prefix
+services:
+  chat-tools:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      TERM: xterm-256color
+
+      HISTORY_MESSAGES: 3
+      OPTION_TEMPERATURE: 0.0
+      OPTION_REPEAT_LAST_N: 2
+      OPTION_REPEAT_PENALTY: 2.2
+      OPTION_TOP_P: 0.5
+      OPTION_TOP_K: 10
+      SYSTEM_INSTRUCTIONS_PATH: /app/docs/system-instructions.md
+      CONTENT_PATH: /app/data    
+
+    volumes:
+      - ./data:/app/data
+      - ./docs:/app/docs
+
+    stdin_open: true   # docker run -i
+    tty: true          # docker run -t
+    restart: unless-stopped
+    models:
+      chat-model:
+        endpoint_var: MODEL_RUNNER_BASE_URL
+        model_var: MODEL_RUNNER_LLM_CHAT
+      embedding-model:
+        endpoint_var: MODEL_RUNNER_BASE_URL
+        model_var: MODEL_RUNNER_LLM_EMBEDDING
+
+models:
+  chat-model:
+    #model: ai/qwen2.5:1.5B-F16
+    model: hf.co/menlo/jan-nano-gguf:q4_k_m   
+  embedding-model:
+    #model: ai/mxbai-embed-large:2.0-F16
+    model: ai/granite-embedding-multilingual:latest

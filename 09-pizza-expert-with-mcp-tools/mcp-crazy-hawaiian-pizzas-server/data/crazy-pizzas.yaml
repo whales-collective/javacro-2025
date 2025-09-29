@@ -1,0 +1,252 @@
+---
+crazy_hawaiian_pizzas:
+  - name: "The Volcanic Pineapple Explosion 🌋"
+    id: "volcanic_pineapple"
+    description: "A fiery twist on the classic Hawaiian with explosive flavors"
+    ingredients:
+      base:
+        - "Spicy marinara sauce infused with ghost pepper 🌶️"
+        - "Mozzarella cheese mixed with smoked gouda"
+        - "Thin crust pizza dough"
+      toppings:
+        - "Grilled pineapple rings caramelized with brown sugar 🍍"
+        - "Carolina Reaper ham glazed with honey"
+        - "Jalapeño slices pickled in pineapple juice"
+        - "Crushed red pepper flakes"
+        - "Drizzle of sriracha-infused olive oil"
+    cooking_time: "12-15 minutes at 475°F"
+    spice_level: "🔥🔥🔥🔥🔥"
+    madness_factor: "EXTREME"
+
+  - name: "The Upside-Down Tropical Tornado 🌪️"
+    id: "upside_down_tornado"
+    description: "Everything you know about Hawaiian pizza, but backwards!"
+    ingredients:
+      base:
+        - "Sweet pineapple sauce base (no tomato!) 🍍"
+        - "Cream cheese and coconut flakes mixture"
+        - "Cauliflower crust for extra weirdness"
+      toppings:
+        - "Ham-flavored seaweed strips 🌊"
+        - "Candied bacon bits rolled in coconut"
+        - "Freeze-dried pineapple powder dusting"
+        - "Edible flowers for tropical vibes 🌺"
+        - "Lime zest tornado spirals"
+    cooking_time: "18-20 minutes at 400°F"
+    spice_level: "🔥"
+    madness_factor: "MIND-BENDING"
+
+  - name: "The Pineapple Pizza Sushi Roll 🍣"
+    id: "pizza_sushi_roll"
+    description: "Hawaiian pizza meets Japanese cuisine in this insane fusion"
+    ingredients:
+      base:
+        - "Sushi rice pressed into pizza shape 🍚"
+        - "Nori sheets as the 'crust'"
+        - "Wasabi-infused cream cheese sauce"
+      toppings:
+        - "Teriyaki glazed spam (fancy ham!) 🥩"
+        - "Pickled pineapple sashimi-style cuts"
+        - "Tempura-fried mozzarella balls"
+        - "Sesame seeds and scallions"
+        - "Eel sauce drizzle pattern"
+    cooking_time: "No cooking - served cold!"
+    spice_level: "🔥🔥"
+    madness_factor: "CULTURALLY CONFUSED"
+
+  - name: "The Breakfast Hawaiian Nightmare 🍳"
+    id: "breakfast_nightmare"
+    description: "Who said you can't have Hawaiian pizza for breakfast?"
+    ingredients:
+      base:
+        - "Maple syrup and butter sauce base 🧈"
+        - "Pancake batter crust (yes, really!)"
+        - "Scrambled egg and cheese mixture"
+      toppings:
+        - "Canadian bacon strips (fancy ham upgrade) 🥓"
+        - "Grilled pineapple rings with cinnamon"
+        - "Hash brown potato chunks"
+        - "Mini pancake pieces as croutons"
+        - "Hollandaise sauce drizzle"
+        - "Fresh chives and everything bagel seasoning"
+    cooking_time: "20-25 minutes at 375°F"
+    spice_level: "🔥"
+    madness_factor: "BREAKFAST CHAOS"
+
+  - name: "The Deconstructed Hawaiian Galaxy 🌌"
+    id: "deconstructed_galaxy"
+    description: "Hawaiian pizza reimagined as edible art from outer space"
+    ingredients:
+      base:
+        - "Black squid ink dough (for space vibes) 🛸"
+        - "Galaxy-colored cheese (food coloring magic)"
+        - "Edible glitter tomato sauce"
+      toppings:
+        - "Ham cut into star and planet shapes ⭐"
+        - "Pineapple spheres made with molecular gastronomy"
+        - "Pop rocks for that space crackle"
+        - "Edible silver leaf accents"
+        - "Dry ice presentation (remove before eating!)"
+    cooking_time: "15-18 minutes at 450°F"
+    spice_level: "🔥🔥"
+    madness_factor: "ASTRONOMICALLY ABSURD"
+
+  - name: "The Sweet Revenge Hawaiian 🍰"
+    id: "sweet_revenge"
+    description: "For those who think pineapple doesn't belong on pizza"
+    ingredients:
+      base:
+        - "Chocolate chip cookie dough crust 🍪"
+        - "Nutella and cream cheese sauce"
+        - "Marshmallow fluff 'cheese'"
+      toppings:
+        - "Candied ham pieces (yes, candy-coated!) 🍭"
+        - "Caramelized pineapple with vanilla"
+        - "Mini marshmallows"
+        - "Crushed graham crackers"
+        - "Maraschino cherries for extra sweetness 🍒"
+        - "Powdered sugar snow dusting"
+    cooking_time: "10-12 minutes at 325°F (low and slow)"
+    spice_level: "🔥 (sugar rush level)"
+    madness_factor: "DESSERT DELIRIUM"
+
+  - name: "The Liquid Hawaiian Experience 🥤"
+    id: "liquid_hawaiian"
+    description: "Hawaiian pizza you can drink... sort of"
+    ingredients:
+      base:
+        - "Pizza dough bowl (edible cup) 🥣"
+        - "Tomato soup base heated to perfection"
+        - "Melted cheese foam topping"
+      toppings:
+        - "Ham broth ice cubes that melt slowly 🧊"
+        - "Pineapple juice pearls (molecular gastronomy)"
+        - "Cheese crisp 'chips' for dipping"
+        - "Breadstick 'straws'"
+        - "Herb oil for aromatic finish 🌿"
+    cooking_time: "Warm the soup, toast the bowl!"
+    spice_level: "🔥🔥"
+    madness_factor: "LIQUID LUNACY"
+
+  - name: "The Time Traveler's Hawaiian 🕰️"
+    id: "time_traveler"
+    description: "Pizza ingredients from different eras combined in chaos"
+    ingredients:
+      base:
+        - "Medieval sourdough crust (aged 3 days) 🏰"
+        - "Roman-style fermented fish sauce base"
+        - "Renaissance herb-infused goat cheese"
+      toppings:
+        - "Viking-style cured ham with mead glaze ⚔️"
+        - "Aztec chocolate-dusted pineapple rings"
+        - "Future lab-grown cheese cubes (or regular if unavailable)"
+        - "Caveman-style roasted bone marrow dots 🦴"
+        - "Space-age freeze-dried strawberries"
+        - "Prohibition-era bootleg moonshine reduction"
+    cooking_time: "25-30 minutes at 425°F (like they did in the olden days)"
+    spice_level: "🔥🔥🔥"
+    madness_factor: "TEMPORALLY CONFUSED"
+
+  - name: "The Invisible Hawaiian Mystery 👻"
+    id: "invisible_mystery"
+    description: "A pizza where you can barely see the toppings!"
+    ingredients:
+      base:
+        - "Clear gelatin 'cheese' sheet 🫥"
+        - "Transparent tomato water reduction"
+        - "Glass noodle crust (yes, really!)"
+      toppings:
+        - "Ham powder (dehydrated and powdered) 💨"
+        - "Pineapple essence oil drops"
+        - "Clear cheese crisps (almost invisible)"
+        - "Edible clear plastic film strips"
+        - "Micro herbs for the only visible element 🌿"
+        - "Flavor bombs that explode in your mouth"
+    cooking_time: "12-15 minutes at 400°F (watch carefully!)"
+    spice_level: "🔥🔥"
+    madness_factor: "MYSTERIOUSLY MIND-BENDING"
+
+  - name: "The Giant's Hawaiian Revenge 🗿"
+    id: "giants_revenge"
+    description: "Everything supersized to ridiculous proportions"
+    ingredients:
+      base:
+        - "48-inch diameter pizza dough (requires multiple ovens) 📏"
+        - "Tomato sauce applied with paint rollers"
+        - "Cheese wheels melted directly onto surface"
+      toppings:
+        - "Whole spiral-cut ham (not sliced!) 🐷"
+        - "Entire pineapples cut in half and grilled"
+        - "Cheese blocks the size of building bricks 🧱"
+        - "Herbs planted like a small garden on top"
+        - "Requires construction equipment to flip"
+    cooking_time: "2-3 hours in industrial oven or multiple home ovens"
+    spice_level: "🔥🔥"
+    madness_factor: "ARCHITECTURALLY ABSURD"
+
+  - name: "The Miniature Hawaiian Madness 🔍"
+    id: "miniature_madness"
+    description: "Tiny pizzas so small you need tweezers to eat them"
+    ingredients:
+      base:
+        - "Pizza dough rolled paper-thin, cut into coin sizes 🪙"
+        - "Tomato sauce applied with eyedropper"
+        - "Cheese grated with microplane into dust"
+      toppings:
+        - "Ham shaved into microscopic confetti pieces ✨"
+        - "Pineapple diced smaller than rice grains"
+        - "Individual herb leaves (one per pizza)"
+        - "Served on doll furniture plates"
+        - "Magnifying glass provided for viewing 🔎"
+    cooking_time: "30 seconds at 500°F (blink and you'll miss it)"
+    spice_level: "🔥"
+    madness_factor: "MICROSCOPICALLY RIDICULOUS"
+
+  - name: "The Backwards Hawaiian Evolution 🔄"
+    id: "backwards_evolution"
+    description: "Start with a normal pizza, then work backwards to ingredients"
+    ingredients:
+      base:
+        - "Fully cooked Hawaiian pizza (store-bought) 🍕"
+        - "Deconstruction tools (forks, knives, patience)"
+        - "Individual serving bowls for each component"
+      toppings:
+        - "Separate the cheese back into milk form somehow 🥛"
+        - "Turn ham back into... well, good luck with that"
+        - "Pineapple juice extracted and fruit reformed"
+        - "Tomato sauce reverse-engineered to whole tomatoes 🍅"
+        - "Dough turned back into flour and water"
+        - "Eat each component separately while crying"
+    cooking_time: "Negative cooking time (you're undoing the work!)"
+    spice_level: "🔥🔥🔥🔥 (emotional spice)"
+    madness_factor: "PHILOSOPHICALLY DEVASTATING"
+
+  - name: "The Weather Forecast Hawaiian 🌤️"
+    id: "weather_forecast"
+    description: "A pizza that changes based on the weather outside"
+    ingredients:
+      base:
+        - "Mood ring pizza dough (changes color with temperature) 🌡️"
+        - "Cloud-white ricotta base on sunny days"
+        - "Storm-dark tapenade on rainy days"
+      toppings:
+        - "Hot ham when it's sunny, cold ham when cloudy ☀️"
+        - "Frozen pineapple chunks when snowing ❄️"
+        - "Grilled pineapple when above 80°F"
+        - "Extra cheese when humidity is high 💧"
+        - "Spicy peppers added during thunderstorms ⛈️"
+        - "Umbrella-shaped herbs when raining"
+    cooking_time: "Depends on barometric pressure"
+    spice_level: "🔥 to 🔥🔥🔥🔥🔥 (weather dependent)"
+    madness_factor: "METEOROLOGICALLY MENTAL"
+
+cooking_tips:
+  - "Always let your creativity run wild! 🎨"
+  - "If it sounds too weird, it's probably perfect"
+  - "Don't forget to take photos - nobody will believe you otherwise 📸"
+  - "Prepare for confused but amazed reactions"
+  - "Keep regular pizza on standby for the faint of heart 😅"
+
+warning: "⚠️ These recipes may cause uncontrollable laughter, existential pizza crises, and/or culinary enlightenment. Proceed with caution and an open mind!"
+
+chef_philosophy: "Life is too short for boring Hawaiian pizza. If you're going to put pineapple on pizza, might as well go completely bonkers with it! 🍍🏄‍♂️"

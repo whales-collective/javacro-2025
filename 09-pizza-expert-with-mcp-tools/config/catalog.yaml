@@ -1,0 +1,12 @@
+registry:
+
+  mcp-pizzerias:
+    remote:
+      url: "http://mcp-pizzerias:6060/mcp"
+      transport_type: http
+
+  mcp-crazy-hawaiian-pizzas:
+    remote:
+      url: "http://mcp-crazy-hawaiian-pizzas:6060/mcp"
+      transport_type: http
+

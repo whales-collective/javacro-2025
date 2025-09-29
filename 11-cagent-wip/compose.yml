@@ -1,0 +1,97 @@
+# docker compose up --build --no-log-prefix
+services:
+  mcp-gateway:
+    # mcp-gateway secures your MCP servers
+    image: docker/mcp-gateway:latest
+    ports:
+      - 9011:9011
+    use_api_socket: true
+    command:
+      - --port=9011
+      - --transport=streaming
+      - --verbose
+      - --catalog=/mcp/catalog.yaml
+      - --servers=mcp-pizzerias,mcp-crazy-hawaiian-pizzas
+    configs:
+      - source: catalog.yaml
+        target:
+          /mcp/catalog.yaml
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      #- ./config:/config
+    depends_on:
+      mcp-pizzerias:
+        condition: service_healthy
+      mcp-crazy-hawaiian-pizzas:
+        condition: service_healthy
+
+  mcp-pizzerias:
+    build:
+      context: ../09-pizza-expert-with-mcp-tools/mcp-pizzerias-server
+      dockerfile: Dockerfile    
+    environment:
+      MCP_HTTP_PORT: 6060
+    
+    volumes:
+      - ../09-pizza-expert-with-mcp-tools/mcp-pizzerias-server/data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:6060/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  mcp-crazy-hawaiian-pizzas:
+    build:
+      context: ../09-pizza-expert-with-mcp-tools/mcp-crazy-hawaiian-pizzas-server
+      dockerfile: Dockerfile    
+    environment:
+      MCP_HTTP_PORT: 6060
+    
+    volumes:
+      - ../09-pizza-expert-with-mcp-tools/mcp-crazy-hawaiian-pizzas-server/data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:6060/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # docker compose attach my-agent
+  pizza-agent:
+    image: docker/cagent:1.5.3
+    volumes:
+      - ./bob.yaml:/app/bob.yaml
+    command: ["run", "/app/bob.yaml"]
+    tty: true
+    stdin_open: true    
+    models:
+      - chat-model
+    depends_on:
+      mcp-gateway:
+        condition: service_started
+        
+models:
+  chat-model:
+    #model: ai/qwen2.5:1.5B-F16
+    model: hf.co/menlo/jan-nano-gguf:q4_k_m   
+  embedding-model:
+    #model: ai/mxbai-embed-large:2.0-F16
+    model: ai/granite-embedding-multilingual:latest
+
+configs:
+  catalog.yaml:
+    content: |
+      registry:
+
+        mcp-pizzerias:
+          remote:
+            url: "http://mcp-pizzerias:6060/mcp"
+            transport_type: http
+
+        mcp-crazy-hawaiian-pizzas:
+          remote:
+            url: "http://mcp-crazy-hawaiian-pizzas:6060/mcp"
+            transport_type: http

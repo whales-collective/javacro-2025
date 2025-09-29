@@ -1,0 +1,30 @@
+# docker compose up --build --no-log-prefix
+services:
+  pizza-expert:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      TERM: xterm-256color
+
+      SYSTEM_INSTRUCTIONS_PATH: /app/docs/system-instructions.md
+      CONTENT_PATH: /app/data    
+
+    volumes:
+      - ./data:/app/data
+      - ./docs:/app/docs
+
+    stdin_open: true   # docker run -i
+    tty: true          # docker run -t
+
+    #restart: unless-stopped
+
+    models:
+      chat-model:
+        endpoint_var: MODEL_RUNNER_BASE_URL
+        model_var: MODEL_RUNNER_LLM_CHAT
+          
+models:
+  chat-model:
+    #model: ai/qwen2.5:1.5B-F16
+    model: ai/qwen2.5:0.5B-F16   

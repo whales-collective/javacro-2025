@@ -1,0 +1,13 @@
+{
+  "name": "embeddings-distances-js",
+  "version": "1.0.0",
+  "description": "JavaScript/Node.js version of the Go embeddings distances demo",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.3.12"
+  }
+}

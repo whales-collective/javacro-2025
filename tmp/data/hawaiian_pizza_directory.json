@@ -1,0 +1,567 @@
+[
+  {
+    "name": "Pink Flamingo",
+    "city": "Paris",
+    "address": "67 Rue Bichat, 75010 Paris",
+    "website": "https://www.pinkflamingo.fr",
+    "phone": "+33 1 42 02 31 70",
+    "specialty": "La Bjork (pineapple, ham, mozzarella)",
+    "description": "Known for creative and unusual pizzas, Pink Flamingo offers a hip atmosphere and their famous Hawaiian-style pizza with fresh pineapple."
+  },
+  {
+    "name": "Pink Flamingo Marais",
+    "city": "Paris",
+    "address": "105 Rue Vieille du Temple, 75003 Paris",
+    "website": "https://www.pinkflamingo.fr",
+    "phone": "+33 1 42 77 76 17",
+    "specialty": "Obama Pizza (ham and pineapple chutney)",
+    "description": "Hip pizzeria with unique delivery service using pink balloons. Features organic ingredients and creative Hawaiian variations."
+  },
+  {
+    "name": "Pink Flamingo Montmartre",
+    "city": "Paris",
+    "address": "30 Rue Muller, 75018 Paris",
+    "website": "https://www.pinkflamingo.fr",
+    "phone": "+33 1 42 55 37 70",
+    "specialty": "Hawaiian with serrano ham and figs",
+    "description": "Montmartre location of the famous Pink Flamingo chain, known for gourmet Hawaiian pizza variations with premium ingredients."
+  },
+  {
+    "name": "Tony's Pizza Napoletana",
+    "city": "San Francisco",
+    "address": "1570 Stockton St, San Francisco, CA 94133",
+    "website": "https://tonyspizzanapoletana.com",
+    "phone": "+1 415-835-9888",
+    "specialty": "Classic Hawaiian (ham, pineapple, mozzarella)",
+    "description": "Award-winning pizzeria by 13-time World Pizza Champion Tony Gemignani, offering multiple pizza styles including Hawaiian."
+  },
+  {
+    "name": "Zachary's Chicago Pizza",
+    "city": "Berkeley",
+    "address": "1853 Solano Ave, Berkeley, CA 94707",
+    "website": "https://zacharys.com",
+    "phone": "+1 510-525-5950",
+    "specialty": "Deep-dish Hawaiian (ham, pineapple, thick cheese layer)",
+    "description": "Employee-owned Bay Area institution famous for deep-dish pizza with over 225 'Best Pizza' awards, serving Hawaiian style since 1983."
+  },
+  {
+    "name": "Zachary's Chicago Pizza Oakland",
+    "city": "Oakland",
+    "address": "5801 College Ave, Oakland, CA 94618",
+    "website": "https://zacharys.com",
+    "phone": "+1 510-655-6385",
+    "specialty": "Stuffed Hawaiian Pizza",
+    "description": "Original Zachary's location offering their famous stuffed-crust Hawaiian pizza with premium ham and fresh pineapple."
+  },
+  {
+    "name": "Little Star Pizza",
+    "city": "San Francisco",
+    "address": "846 Divisadero St, San Francisco, CA 94117",
+    "website": "https://littlestarpizza.com",
+    "phone": "+1 415-441-1118",
+    "specialty": "Deep-dish Hawaiian",
+    "description": "Chicago-style deep dish pizzeria known for their rich, thick-crust Hawaiian pizza with quality ingredients."
+  },
+  {
+    "name": "Domino's Pizza Times Square",
+    "city": "New York",
+    "address": "253 W 42nd St, New York, NY 10036",
+    "website": "https://www.dominos.com",
+    "phone": "+1 212-997-2010",
+    "specialty": "Hawaiian Pizza (ham, pineapple, mozzarella)",
+    "description": "Global pizza chain's flagship location serving their classic Hawaiian pizza with ham and pineapple."
+  },
+  {
+    "name": "Pizza Hut Leicester Square",
+    "city": "London",
+    "address": "29-31 Regent Street, London SW1Y 4NN",
+    "website": "https://www.pizzahut.co.uk",
+    "phone": "+44 20 7839 2200",
+    "specialty": "Hawaiian (ham and pineapple)",
+    "description": "International pizza chain's central London location serving traditional Hawaiian pizza."
+  },
+  {
+    "name": "Pizza Union Spitalfields",
+    "city": "London",
+    "address": "26 Brushfield St, London E1 6AG",
+    "website": "https://www.pizzaunion.com",
+    "phone": "+44 20 7247 8631",
+    "specialty": "Roman-style Hawaiian (thin crust, ham, pineapple)",
+    "description": "Fire-baked Roman style pizzeria offering thin and crispy 12-inch Hawaiian pizzas."
+  },
+  {
+    "name": "London Pizza Depot",
+    "city": "London",
+    "address": "Various locations across London",
+    "website": "https://londonpizzadepot.co.uk",
+    "phone": "+44 20 8547 1111",
+    "specialty": "Hawaiian Hula (ham and pineapple classic)",
+    "description": "Local London chain celebrating the much-loved ham and pineapple combination on their Hawaiian Hula pizza."
+  },
+  {
+    "name": "Papa John's Honolulu",
+    "city": "Honolulu",
+    "address": "1450 Ala Moana Blvd, Honolulu, HI 96814",
+    "website": "https://www.papajohns.com",
+    "phone": "+1 808-944-7272",
+    "specialty": "Hawaiian BBQ Chicken Pizza",
+    "description": "Papa John's Hawaii location offering both traditional Hawaiian and unique Hawaiian BBQ chicken variations."
+  },
+  {
+    "name": "Domino's Pizza Hawaii Kai",
+    "city": "Honolulu",
+    "address": "7192 Kalanianaole Hwy, Honolulu, HI 96825",
+    "website": "https://www.dominos.com",
+    "phone": "+1 808-396-9466",
+    "specialty": "Hawaiian Pizza with local pineapple",
+    "description": "Hawaiian location of Domino's featuring locally-sourced pineapple on their Hawaiian pizza, staying true to the islands."
+  },
+  {
+    "name": "Pizza Marumo",
+    "city": "Tokyo",
+    "address": "1-9-5 Ebisu, Shibuya, Tokyo 150-0013",
+    "website": "https://www.pizzamarumo.com",
+    "phone": "+81 3-6450-3329",
+    "specialty": "Japanese-Hawaiian Fusion (pineapple, ham, teriyaki sauce)",
+    "description": "Tokyo's renowned pizzeria offering a Japanese twist on Hawaiian pizza with teriyaki flavors and premium ingredients."
+  },
+  {
+    "name": "The Pizza Bar on 38th",
+    "city": "Tokyo",
+    "address": "6-12-2 Roppongi, Minato, Tokyo 106-0032",
+    "website": "https://thepizzabar.jp",
+    "phone": "+81 3-5786-3987",
+    "specialty": "Tokyo Hawaiian (ham, pineapple, Japanese cheese blend)",
+    "description": "Award-winning Tokyo pizzeria ranked #3 globally, offering their take on Hawaiian pizza with Japanese cheese blends."
+  },
+  {
+    "name": "Pizza Roma Centro",
+    "city": "Rome",
+    "address": "Via dei Cappuccini 5, 00187 Rome",
+    "website": "https://www.pizzaroma.it",
+    "phone": "+39 06 482 1631",
+    "specialty": "Pizza Hawaiana (prosciutto, ananas)",
+    "description": "Traditional Roman pizzeria offering their Italian interpretation of Hawaiian pizza with prosciutto and fresh pineapple."
+  },
+  {
+    "name": "180g Pizzeria Romana",
+    "city": "Rome",
+    "address": "Via dei Gracchi 280, 00192 Rome",
+    "website": "https://www.180g.it",
+    "phone": "+39 06 3936 4609",
+    "specialty": "Hawaiana Gourmet (San Daniele ham, caramelized pineapple)",
+    "description": "Modern Roman pizzeria featuring a gourmet version of Hawaiian pizza with premium San Daniele ham and caramelized pineapple."
+  },
+  {
+    "name": "Una Pizza Napoletana",
+    "city": "New York",
+    "address": "175 Orchard St, New York, NY 10002",
+    "website": "https://www.unapizza.com",
+    "phone": "+1 212-477-9950",
+    "specialty": "Neapolitan Hawaiian (seasonal offering)",
+    "description": "World's #1 ranked pizzeria (2024) occasionally offers a refined Hawaiian pizza using the finest Italian ingredients."
+  },
+  {
+    "name": "L'industrie Pizzeria",
+    "city": "New York",
+    "address": "254 S 2nd St, Brooklyn, NY 11211",
+    "website": "https://www.lindustriepizza.com",
+    "phone": "+1 718-599-0002",
+    "specialty": "Gourmet Hawaiian (prosciutto di Parma, roasted pineapple)",
+    "description": "Brooklyn's acclaimed pizzeria offering an upscale version of Hawaiian pizza with premium Italian prosciutto."
+  },
+  {
+    "name": "Joe's Pizza",
+    "city": "New York",
+    "address": "7 Carmine St, New York, NY 10014",
+    "website": "https://www.joespizzanyc.com",
+    "phone": "+1 212-366-1182",
+    "specialty": "Classic NY Hawaiian Slice",
+    "description": "Iconic NYC pizza joint serving traditional Hawaiian slices with ham and pineapple on their famous thin crust."
+  },
+  {
+    "name": "Lou Malnati's",
+    "city": "Chicago",
+    "address": "439 N Wells St, Chicago, IL 60654",
+    "website": "https://www.loumalnatis.com",
+    "phone": "+1 312-828-9800",
+    "specialty": "Deep-Dish Hawaiian",
+    "description": "Chicago's legendary deep-dish institution offering thick-crust Hawaiian pizza with their signature buttery crust and chunky tomato sauce."
+  },
+  {
+    "name": "Giordano's",
+    "city": "Chicago",
+    "address": "730 N Rush St, Chicago, IL 60611",
+    "website": "https://giordanos.com",
+    "phone": "+1 312-951-0747",
+    "specialty": "Stuffed Hawaiian Pizza",
+    "description": "Famous Chicago pizzeria known for stuffed pizza, featuring Hawaiian with double crust and generous ham and pineapple filling."
+  },
+  {
+    "name": "Cicis Pizza",
+    "city": "Dallas",
+    "address": "Multiple locations nationwide",
+    "website": "https://www.cicis.com",
+    "phone": "+1 972-960-7272",
+    "specialty": "Hawaiian Ham & Pineapple Specialty Pizza",
+    "description": "All-you-can-eat pizza buffet chain featuring their Hawaiian specialty with garlic butter crust, marinara, ham, and sweet pineapple."
+  },
+  {
+    "name": "California Pizza Kitchen",
+    "city": "Los Angeles",
+    "address": "207 S Beverly Dr, Beverly Hills, CA 90212",
+    "website": "https://www.cpk.com",
+    "phone": "+1 310-275-1101",
+    "specialty": "Hawaiian BBQ Chicken Pizza",
+    "description": "California-style pizza restaurant offering a unique twist on Hawaiian with BBQ chicken, pineapple, and red onions."
+  },
+  {
+    "name": "Blaze Pizza",
+    "city": "Pasadena",
+    "address": "21 E Colorado Blvd, Pasadena, CA 91105",
+    "website": "https://www.blazepizza.com",
+    "phone": "+1 626-844-4012",
+    "specialty": "Build Your Own Hawaiian",
+    "description": "Fast-casual pizza chain allowing custom Hawaiian pizzas with choice of ham or Canadian bacon and fresh pineapple."
+  },
+  {
+    "name": "Gino's East",
+    "city": "Chicago",
+    "country": "United States",
+    "address": "162 E Superior St, Chicago, IL 60611",
+    "website": "https://www.ginoseast.com",
+    "phone": "+1 312-266-3337",
+    "specialty": "Deep-Dish Hawaiian Supreme",
+    "description": "Chicago deep-dish pioneer offering Hawaiian pizza in their signature corn meal crust with extra cheese and chunky sauce."
+  },
+  {
+    "name": "Prince Street Pizza",
+    "city": "New York",
+    "country": "United States",
+    "address": "27 Prince St, New York, NY 10012",
+    "website": "https://www.princestreetpizza.com",
+    "phone": "+1 212-966-4100",
+    "specialty": "Sicilian Hawaiian",
+    "description": "Famous for thick Sicilian-style squares, offering Hawaiian with ham and pineapple on their signature airy, focaccia-like crust."
+  },
+  {
+    "name": "Napoletana Pizza",
+    "city": "Sydney",
+    "country": "Australia",
+    "address": "Shop 4/181 King St, Newtown NSW 2042",
+    "website": "https://www.napoletana.com.au",
+    "phone": "+61 2 9557 8129",
+    "specialty": "Aussie Hawaiian (ham, pineapple, bacon)",
+    "description": "Sydney pizzeria serving the popular Australian version of Hawaiian pizza with both ham and bacon plus pineapple."
+  },
+  {
+    "name": "Domino's Australia",
+    "city": "Melbourne",
+    "country": "Australia",
+    "address": "Multiple locations",
+    "website": "https://www.dominos.com.au",
+    "phone": "+61 13 30 66",
+    "specialty": "Traditional Hawaiian Pizza",
+    "description": "Domino's Australia where Hawaiian pizza ranks among the top 4 most popular, serving over 5.7 million Hawaiian pizzas annually."
+  },
+  {
+    "name": "Hell Pizza",
+    "city": "Auckland",
+    "country": "New Zealand",
+    "address": "Multiple locations",
+    "website": "https://www.hell.co.nz",
+    "phone": "+64 9-366-4355",
+    "specialty": "Purgatory (pineapple, ham, jalapeños)",
+    "description": "New Zealand pizza chain with a twist on Hawaiian, adding jalapeños for heat alongside traditional ham and pineapple."
+  },
+  {
+    "name": "Pizza Express",
+    "city": "London",
+    "country": "United Kingdom",
+    "address": "Multiple locations",
+    "website": "https://www.pizzaexpress.com",
+    "phone": "+44 20 7437 9595",
+    "specialty": "Pollastrello Hawaiian",
+    "description": "British pizza chain offering their version of Hawaiian pizza alongside their Italian-inspired menu."
+  },
+  {
+    "name": "Da Michele",
+    "city": "Naples",
+    "country": "Italy",
+    "address": "Via Cesare Sersale, 1, 80139 Napoli",
+    "website": "https://www.damichele.net",
+    "phone": "+39 081 553 9204",
+    "specialty": "Pizza con Ananas (limited seasonal offering)",
+    "description": "Historic Neapolitan pizzeria, occasionally offering pineapple pizza as a modern interpretation while maintaining traditional methods."
+  },
+  {
+    "name": "Pizzarium",
+    "city": "Rome",
+    "country": "Italy",
+    "address": "Via della Meloria, 43, 00136 Rome",
+    "website": "https://www.pizzarium.it",
+    "phone": "+39 06 3974 5416",
+    "specialty": "Pizza al Taglio Hawaiana",
+    "description": "Gabriele Bonci's famous pizza al taglio spot occasionally features gourmet Hawaiian variations using premium ingredients."
+  },
+  {
+    "name": "Franco Manca",
+    "city": "London",
+    "country": "United Kingdom",
+    "address": "4 Market Row, London SW9 8LD",
+    "website": "https://www.francomanca.co.uk",
+    "phone": "+44 20 7738 3021",
+    "specialty": "Sourdough Hawaiian (seasonal)",
+    "description": "British sourdough pizza chain that occasionally offers Hawaiian variations using their signature slow-fermented dough."
+  },
+  {
+    "name": "Rossopomodoro",
+    "city": "Milan",
+    "country": "Italy",
+    "address": "Via Nino Bixio, 31, 20129 Milan",
+    "website": "https://www.rossopomodoro.it",
+    "phone": "+39 02 2940 6876",
+    "specialty": "Pizza Hawaiana Italiana",
+    "description": "Neapolitan pizza chain offering their Italian take on Hawaiian pizza with buffalo mozzarella and San Marzano tomatoes."
+  },
+  {
+    "name": "Peter Piper Pizza",
+    "city": "Phoenix",
+    "country": "United States",
+    "address": "Multiple locations",
+    "website": "https://www.peterpiperpizza.com",
+    "phone": "+1 623-587-5444",
+    "specialty": "Hawaiian Luau Pizza",
+    "description": "Family entertainment pizza chain featuring Hawaiian Luau pizza as part of their buffet and menu offerings."
+  },
+  {
+    "name": "Casey's General Store",
+    "city": "Des Moines",
+    "country": "United States",
+    "address": "Multiple Midwest locations",
+    "website": "https://www.caseys.com",
+    "phone": "+1 515-965-6100",
+    "specialty": "Breakfast Hawaiian (ham, pineapple, eggs)",
+    "description": "Midwest convenience store chain famous for pizza, offering unique breakfast Hawaiian with ham, pineapple, and eggs."
+  },
+  {
+    "name": "Satellite Restaurant",
+    "city": "Chatham",
+    "country": "Canada",
+    "address": "Historical location - 539 Keil Dr, Chatham, ON N7M 3G1",
+    "website": "Historical landmark",
+    "phone": "Historical reference",
+    "specialty": "Original Hawaiian Pizza (1962)",
+    "description": "The birthplace of Hawaiian pizza where Sam Panopoulos first created the ham and pineapple combination in 1962."
+  },
+  {
+    "name": "Standard Serious Pizza",
+    "city": "Berlin",
+    "country": "Germany",
+    "address": "Templiner Str. 7, 10119 Berlin",
+    "website": "https://www.standard-berlin.de",
+    "phone": "+49 30 48625614",
+    "specialty": "Neapolitan Hawaiian (seasonal offering with prosciutto and pineapple)",
+    "description": "Pioneer of Berlin's Neapolitan pizza scene since 2014, offering high-quality traditional pizzas with occasional Hawaiian variations using premium Italian ingredients."
+  },
+  {
+    "name": "Standard Serious Pizza Kreuzberg",
+    "city": "Berlin",
+    "country": "Germany",
+    "address": "Görlitzer Str. 68, 10997 Berlin",
+    "website": "https://www.standard-berlin.de",
+    "phone": "+49 30 48625614",
+    "specialty": "Authentic Neapolitan with Hawaii option",
+    "description": "Second location of Berlin's renowned Neapolitan pizzeria, featuring gas-fired oven pizzas with cold-fermented dough and premium toppings including Hawaiian variations."
+  },
+  {
+    "name": "Magic John's Pizza",
+    "city": "Berlin",
+    "country": "Germany",
+    "address": "Oranienburger Str. 48, 10117 Berlin",
+    "website": "https://www.magicjohns.com",
+    "phone": "+49 30 91570700",
+    "specialty": "New York Style Hawaiian (large thin crust with ham and pineapple)",
+    "description": "Berlin's first authentic New York slice shop, serving big apple-style thin crust Hawaiian pizza by the slice or whole pie, founded by Brooklyn expat John."
+  },
+  {
+    "name": "Magic John's Garage",
+    "city": "Berlin",
+    "country": "Germany",
+    "address": "Heidestr. 52, 13467 Berlin",
+    "website": "https://www.magicjohns.com",
+    "phone": "+49 30 91570700",
+    "specialty": "Detroit Style Hawaiian (thick crust with caramelized cheese)",
+    "description": "Second location of Magic John's featuring Detroit-style deep dish Hawaiian pizza with caramelized cheese crusts and generous toppings."
+  },
+  {
+    "name": "Mangiare Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "address": "Arminiusstraße 2-4, Arminiusmarkthalle, 10551 Berlin",
+    "website": "https://mangiareberlin.de",
+    "phone": "+49 152 14493604",
+    "specialty": "Sardinian-Style Hawaiian (with Italian ham and fresh pineapple)",
+    "description": "Authentic Neapolitan pizzeria in historic Arminius market hall, run by Sardinian chefs using ingredients imported from Italy, offering their take on Hawaiian pizza."
+  },
+  {
+    "name": "Domino's Pizza Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "address": "Multiple locations throughout Berlin",
+    "website": "https://www.dominos.de",
+    "phone": "+49 30 2000 2000",
+    "specialty": "Classic Hawaiian Pizza (German style)",
+    "description": "International pizza chain with numerous Berlin locations serving their classic Hawaiian pizza, popular in Germany since Hawaiian pizza is linked to Toast Hawaii tradition."
+  },
+  {
+    "name": "Pizzeria Da Sergio",
+    "city": "Rovinj",
+    "country": "Croatia",
+    "address": "Grisia 11, 52210 Rovinj",
+    "website": "https://www.facebook.com/DaSergioRv",
+    "phone": "+385 52 816 949",
+    "specialty": "Thin Crust Hawaiian (ham, pineapple, mozzarella)",
+    "description": "Historic pizzeria in Rovinj's old town, famous for authentic Italian thin-crust pizzas. Known as one of the best pizzerias in Croatia with excellent Hawaiian variations."
+  },
+  {
+    "name": "Zita Pizza Napoletana",
+    "city": "Rovinj",
+    "country": "Croatia",
+    "address": "Ul. Driovier 24, 52210 Rovinj",
+    "website": "https://zitapizza.com",
+    "phone": "+385 52 229 688",
+    "specialty": "Neapolitan Hawaiian (organic ingredients, fresh pineapple)",
+    "description": "Authentic Neapolitan pizzeria using organic and sustainable local products, offering their take on Hawaiian pizza with premium Italian ingredients."
+  },
+  {
+    "name": "Pizzeria Orlando",
+    "city": "Rovinj",
+    "country": "Croatia",
+    "address": "Multiple locations in Rovinj area",
+    "website": "Local establishment",
+    "phone": "+385 52 829 001",
+    "specialty": "Croatian-Italian Hawaiian (prosciutto, pineapple, local cheese)",
+    "description": "Family-run pizzeria outside old town serving excellent Italian-style pizzas with Croatian touches, known for fresh ingredients and welcoming atmosphere."
+  },
+  {
+    "name": "Pizzeria Stari Grad",
+    "city": "Rovinj",
+    "country": "Croatia",
+    "address": "Old Town Rovinj center",
+    "website": "https://www.facebook.com/starigrad.rovinj",
+    "phone": "+385 52 813 402",
+    "specialty": "Traditional Hawaiian Pizza",
+    "description": "Located in the heart of Rovinj's old town, serving traditional Italian cuisine including classic Hawaiian pizza with fresh, simple ingredients."
+  },
+  {
+    "name": "Al Quadrato Pizzeria",
+    "city": "Rovinj",
+    "country": "Croatia",
+    "address": "Historic center of Rovinj",
+    "website": "Local pizzeria",
+    "phone": "+385 52 804 570",
+    "specialty": "Italian-style Hawaiian with umbrian products",
+    "description": "Pizzeria owned by Umbrian pizzamaker offering authentic Italian pizzas made with imported Italian products, including their version of Hawaiian pizza."
+  },
+  {
+    "name": "Pizzeria Via Mercanti",
+    "city": "Toronto",
+    "country": "Canada",
+    "address": "188 Augusta Avenue, Toronto, ON M5T 1M1",
+    "website": "https://www.pizzeriaviamercanti.ca",
+    "phone": "+1 647-343-6647",
+    "specialty": "Neapolitan Hawaiian (premium prosciutto, fresh pineapple)",
+    "description": "Award-winning family pizzeria in historic Kensington Market, recognized as one of Toronto's top pizzerias. Features authentic Neapolitan wood-fired pizzas with gourmet Hawaiian variations."
+  },
+  {
+    "name": "Pizzeria Via Mercanti Elm Street",
+    "city": "Toronto",
+    "country": "Canada",
+    "address": "87 Elm Street, Toronto, ON M5G 1H4",
+    "website": "https://www.pizzeriaviamercanti.ca",
+    "phone": "+1 416-901-1899",
+    "specialty": "Gourmet Two-Layer Hawaiian (ricotta, prosciutto, pineapple, topped with margherita)",
+    "description": "Upscale location with beautiful 60-seat patio in historic YWCA building. Featured on Food Network's 'You Gotta Eat Here!' for their innovative pizza creations."
+  },
+  {
+    "name": "Pizzeria Via Mercanti Avenue",
+    "city": "Toronto",
+    "country": "Canada",
+    "address": "1954 Avenue Road, Toronto, ON M5M 4A1",
+    "website": "https://viamercantiavenue.ca",
+    "phone": "+1 647-329-2994",
+    "specialty": "Artisan Hawaiian with San Marzano tomatoes",
+    "description": "Third location of the acclaimed Via Mercanti family, offering refined Neapolitan pizzas with premium ingredients and sophisticated Hawaiian interpretations."
+  },
+  {
+    "name": "Famoso Neapolitan Pizzeria Calgary",
+    "city": "Calgary",
+    "country": "Canada",
+    "address": "2303 4th Street SW, Suite 105, Calgary, AB T2S 2S7",
+    "website": "https://famoso.ca",
+    "phone": "+1 403-228-9000",
+    "specialty": "Authentic Neapolitan Hawaiian (Italian ham, crushed pineapple, fior-di-latte)",
+    "description": "Upscale chain serving VPN-certified Neapolitan pizzas cooked in Italian bell ovens. Located in trendy Mission District with craft cocktails and premium wines."
+  },
+  {
+    "name": "Famoso Neapolitan Pizzeria Vancouver",
+    "city": "Vancouver",
+    "country": "Canada",
+    "address": "1380 Commercial Drive, Vancouver, BC V5L 3X5",
+    "website": "https://famoso.ca",
+    "phone": "+1 604-253-4055",
+    "specialty": "West Coast Hawaiian (organic pineapple, prosciutto, local cheese)",
+    "description": "Sophisticated pizzeria on vibrant Commercial Drive, featuring authentic Neapolitan pizzas with Pacific Northwest ingredients and innovative Hawaiian combinations."
+  },
+  {
+    "name": "Ignite Pizzeria",
+    "city": "Vancouver",
+    "country": "Canada",
+    "address": "Multiple Vancouver locations",
+    "website": "https://ignitepizzeria.com",
+    "phone": "+1 604-559-8000",
+    "specialty": "Stone-fired Hawaiian (800-degree oven, artisanal toppings)",
+    "description": "Modern Vancouver pizzeria stone-firing pizzas at 800 degrees. Known for handmade dough, premium ingredients, and creative Hawaiian variations with local BC products."
+  },
+  {
+    "name": "Blondies Pizza",
+    "city": "Toronto",
+    "country": "Canada",
+    "address": "Multiple GTA locations",
+    "website": "https://blondiespizza.ca",
+    "phone": "+1 416-546-1111",
+    "specialty": "Gourmet Thick Crust Hawaiian",
+    "description": "Toronto's favorite gourmet pizzeria featuring thick crust pizzas made with hand-stretched dough and premium quality ingredients, including elevated Hawaiian options."
+  },
+  {
+    "name": "Pizzeria Badiali",
+    "city": "Toronto",
+    "country": "Canada",
+    "address": "1020 College St, Toronto, ON M6H 1A9",
+    "website": "https://pizzeriabadiali.com",
+    "phone": "+1 416-537-2777",
+    "specialty": "New York Style Hawaiian (carefully sourced ingredients)",
+    "description": "Neighborhood slice shop in Toronto's West End, serving classic New York-style pizza with carefully sourced and house-made ingredients, including artisanal Hawaiian variations."
+  },
+  {
+    "name": "Elena Restaurant",
+    "city": "Montreal",
+    "country": "Canada",
+    "address": "4685 Boulevard Saint-Laurent, Montreal, QC H2T 1R2",
+    "website": "Local upscale restaurant",
+    "phone": "+1 514-844-5002",
+    "specialty": "Upscale Hawaiian (blue cheese, pear, premium ham)",
+    "description": "Chic Montreal restaurant known for sophisticated pizza combinations including innovative Hawaiian variations with gourmet ingredients like blue cheese and pear."
+  },
+  {
+    "name": "Boston Pizza",
+    "city": "Multiple Cities",
+    "country": "Canada",
+    "address": "Nationwide chain with 350+ locations",
+    "website": "https://www.bostonpizza.com",
+    "phone": "+1 800-267-8667",
+    "specialty": "Canadian Hawaiian (Canadian bacon, pineapple, mozzarella)",
+    "description": "Canada's largest casual dining brand, serving their popular Hawaiian pizza made with Canadian bacon and pineapple across 350+ locations nationwide."
+  }
+]
