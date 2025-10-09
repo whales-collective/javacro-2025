@@ -12,10 +12,10 @@ paginate: true
   color: indianred;
 }
 </style>
-# 🍍 BOB: THE HAWAIIAN PIZZA GURU 🍕
-### With <span class="indianred">(local)</span> SLMs, RAG, Agents, Tools & MCP
-> But with (very) small **S**LMs 🐣
-> And 🐳 Docker Model Runner
+# Bob, a 🍕🍍🥓 Hawaiian Pizza expert 
+> powered by 🐳 Docker Model Runner
+
+
 
 </br></br></br></br></br>
 

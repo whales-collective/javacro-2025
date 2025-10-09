@@ -1,17 +1,17 @@
 # docker compose up --build --no-log-prefix
 services:
-  first-simple-chat:
+  simple-chat:
+
     build:
       context: .
 
       dockerfile: Dockerfile
-    environment:
-      TERM: xterm-256color
+    # environment:
+    #   TERM: xterm-256color
 
     stdin_open: true   # docker run -i
     tty: true          # docker run -t
     
-
     models:
       chat-model:
         endpoint_var: MODEL_RUNNER_BASE_URL

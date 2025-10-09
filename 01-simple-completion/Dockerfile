@@ -16,4 +16,6 @@ RUN chown -R bob-loves-js:nodejs /app
 # Switch to non-root user
 USER bob-loves-js
 
+CMD [ "node", "index.js" ]
+
 
