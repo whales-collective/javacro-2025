@@ -10,20 +10,23 @@ import prompts from "prompts";
 import fs from 'fs';
 
 
-const llm = new ChatOpenAI({
+const chatModel = new ChatOpenAI({
   model: process.env.MODEL_RUNNER_LLM_CHAT || `ai/qwen2.5:latest`,
   apiKey: "",
   configuration: {
     baseURL: process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/",
   },
   temperature: parseFloat(process.env.OPTION_TEMPERATURE) || 0.0,
-  repeat_last_n: parseInt(process.env.OPTION_REPEAT_LAST_N) || 2,
-  //repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
-  //top_k: parseInt(process.env.OPTION_TOP_K) || 10,
   top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
+  top_k: parseInt(process.env.OPTION_TOP_K) || 10,
+  repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
+  presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
+  max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
+  min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
+
 });
 
-const llmEmbeddings = new OpenAIEmbeddings({
+const embeddingsModel = new OpenAIEmbeddings({
     model: process.env.MODEL_RUNNER_LLM_EMBEDDING || "ai/granite-embedding-multilingual:latest",
     configuration: {
     baseURL: process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/",
@@ -31,6 +34,7 @@ const llmEmbeddings = new OpenAIEmbeddings({
     }
 })
 
+const maxSimilarities = parseInt(process.env.MAX_SIMILARITIES) || 3
 
 // ---[BEGIN:][Create the embeddings]-------
 
@@ -38,7 +42,7 @@ const llmEmbeddings = new OpenAIEmbeddings({
 //!  Create the embeddings
 //! ----------------------------------------------------------------
 console.log("========================================================")
-console.log("🦜 Embeddings model:", llmEmbeddings.model)
+console.log("🦜 Embeddings model:", embeddingsModel.model)
 console.log("📝 Creating embeddings...")
 let contentPath = process.env.CONTENT_PATH || "./data"
 
@@ -52,7 +56,7 @@ const splitter = RecursiveCharacterTextSplitter.fromLanguage("markdown", {
 let contentFromFiles = readTextFilesRecursively(contentPath, [".md"])
 
 // Initialize the vector store
-const vectorStore = new MemoryVectorStore(llmEmbeddings)
+const vectorStore = new MemoryVectorStore(embeddingsModel)
 
 // Create the embeddings and add them to the vector store
 const chunks = await splitter.createDocuments(contentFromFiles);
@@ -96,7 +100,7 @@ while (!exit) {
     //? ----------------------------------------------------------------
     //? Search for similarities
     //? ----------------------------------------------------------------
-    const similaritySearchResults = await vectorStore.similaritySearch(userMessage,3)
+    const similaritySearchResults = await vectorStore.similaritySearch(userMessage, maxSimilarities)
 
     //? Create the knowledge base from the similarity search results
     let knowledgeBase = `KNOWLEDGE BASE:\n`
@@ -117,7 +121,7 @@ while (!exit) {
     ]
     
     let assistantResponse = ''
-    const stream = await llm.stream(messages);
+    const stream = await chatModel.stream(messages);
     for await (const chunk of stream) {
       assistantResponse += chunk.content
       process.stdout.write(chunk.content);

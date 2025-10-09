@@ -6,7 +6,7 @@
 - Panopoulos was inspired by Chinese dishes that combined sweet and savory flavors.
 - Initially considered unusual, the pizza gained popularity throughout the 1960s and 1970s.
 
-## Traditional Ingredients
+## Traditional Ingredients: what is the recipe of the hawaiian pizza?
 - Base: Traditional pizza dough
 - Sauce: Tomato-based pizza sauce
 - Cheese: Mozzarella cheese
@@ -19,7 +19,7 @@
 - Canned pineapple is often preferred as the canning process neutralizes this enzyme
 - Pineapple should be well-drained before being placed on pizza to prevent excess moisture
 
-## Cooking Specifications
+## Cooking Specifications: what is the recipe of the hawaiian pizza?
 - Optimal temperature: 475-500°F (246-260°C)
 - Best results in a conventional oven: 12-15 minutes
 - Wood-fired oven: 90 seconds to 2 minutes at 800-900°F (427-482°C)

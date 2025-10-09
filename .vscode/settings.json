@@ -2,13 +2,15 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Idea intellij light theme",
     "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 20,
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "editor.detectIndentation": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1000,
     "workbench.tree.indent": 20,
+    //"workbench.activityBar.location": "top",
+    "workbench.editor.showTabs": "multiple",
     "window.zoomLevel": 0.0,
     "[markdown]": {
         "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -16,7 +18,7 @@
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.fontWeight": "normal",
         "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
-        "editor.fontSize": 14,
+        "editor.fontSize": 20,
         "editor.wordWrap": "on",
         "editor.quickSuggestions": {
             "comments": "off",
@@ -24,27 +26,255 @@
             "other": "off"
         }
     },
-    "markdown.preview.fontSize": 16,
+    "markdown.preview.fontSize": 20,
     "workbench.editorAssociations": {
         "*.md": "vscode.markdown.preview.editor"
     },
+    "markdown.marp.html": "all"  ,
     "[dockerfile]": {
-        "editor.fontSize": 16,
+        "editor.fontSize": 20,
     },
     "[dockercompose]": {
-        "editor.fontSize": 16,
+        "editor.fontSize": 20,
     },
     "[json]": {
-        "editor.fontSize": 16,
+        "editor.fontSize": 20,
     },
+    "[javascript]": {
+        "editor.fontSize": 20,
+    },    
     "[yaml]": {
-        "editor.fontSize": 16,
+        "editor.fontSize": 20,
 
     },
     "[go]": {
-        "editor.fontSize": 16,
+        "editor.fontSize": 20,
     },
     "todohighlight.keywords": [
+        {
+            "text": "dungeonAgent ",
+            "color": "#000000",
+            "backgroundColor": "#E2F0F2",
+            "border": "1px solid #E2F0F2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },   
+        {
+            "text": "dungeonAgent,",
+            "color": "#000000",
+            "backgroundColor": "#E2F0F2",
+            "border": "1px solid #E2F0F2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },           
+        {
+            "text": "dungeonAgent.",
+            "color": "#000000",
+            "backgroundColor": "#E2F0F2",
+            "border": "1px solid #E2F0F2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },           
+        {
+            "text": "playerTotal := playerRoll1 + playerRoll2 + player.Strength",
+            "color": "#000000",
+            "backgroundColor": "#E2F0F2",
+            "border": "1px solid #E2F0F2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "monsterTotal := monsterRoll1 + monsterRoll2 + monster.Strength",
+            "color": "#000000",
+            "backgroundColor": "#E2F0F2",
+            "border": "1px solid #E2F0F2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "[MCP Server]",
+            "color": "#ffffff",
+            "backgroundColor": "#BE0ECE",
+            "border": "1px solid #BE0ECE",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+        {
+            "text": "[MCP Dungeon Server]",
+            "color": "#ffffff",
+            "backgroundColor": "#BE0ECE",
+            "border": "1px solid #BE0ECE",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },   
+        {
+            "text": "[MCP Client]",
+            "color": "#ffffff",
+            "backgroundColor": "#7D5BDA",
+            "border": "1px solid #7D5BDA",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },   
+        {
+            "text": "[list of tools]",
+            "color": "#000000",
+            "backgroundColor": "#E4E2E8",
+            "border": "1px solid #E4E2E8",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "<- important",
+            "color": "#000000",
+            "backgroundColor": "#F0D0B8",
+            "border": "1px solid #F0D0B8",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                               
+        {
+            "text": "[Streamable HTTP MCP server]",
+            "color": "#ffffff",
+            "backgroundColor": "#73097D",
+            "border": "1px solid #73097D",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                
+        {
+            "text": "[Agent]",
+            "color": "#ffffff",
+            "backgroundColor": "#5917E8",
+            "border": "1px solid #5917E8",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[Agent creation]",
+            "color": "#ffffff",
+            "backgroundColor": "#5917E8",
+            "border": "1px solid #5917E8",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },          
+        {
+            "text": "[End Of Level Boss Agent]",
+            "color": "#ffffff",
+            "backgroundColor": "#5917E8",
+            "border": "1px solid #5917E8",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },   
+        {
+            "text": "[Similarity Search]",
+            "color": "#ffffff",
+            "backgroundColor": "#AF378D",
+            "border": "1px solid #AF378D",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "[Vector Store]",
+            "color": "#ffffff",
+            "backgroundColor": "#AF378D",
+            "border": "1px solid #AF378D",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },    
+        {
+            "text": "[Agent Card]",
+            "color": "#ffffff",
+            "backgroundColor": "#2D6BD8",
+            "border": "1px solid #2D6BD8",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[Agent Stream Callback]",
+            "color": "#ffffff",
+            "backgroundColor": "#2D6BD8",
+            "border": "1px solid #2D6BD8",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[Streaming Chat Completion]",
+            "color": "#ffffff",
+            "backgroundColor": "#449169",
+            "border": "1px solid #449169",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                                             
+        {
+            "text": "Game initialisation",
+            "color": "#ffffff",
+            "backgroundColor": "#E65524",
+            "border": "1px solid #E65524",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "Dungeon Master Agent",
+            "color": "#ffffff",
+            "backgroundColor": "#0B9F21",
+            "border": "1px solid #0B9F21",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "Agents Team of the Dungeon",
+            "color": "#ffffff",
+            "backgroundColor": "#0B9F21",
+            "border": "1px solid #0B9F21",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "Loop to interact with the agents",
+            "color": "#000000",
+            "backgroundColor": "#B7E9BE",
+            "border": "1px solid #B7E9BE",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },   
+        {
+            "text": "Tool execution callback if detected by the agent",
+            "color": "#000000",
+            "backgroundColor": "#B7E9BE",
+            "border": "1px solid #B7E9BE",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                                 
+        {
+            "text": "Dungeon structure",
+            "color": "#ffffff",
+            "backgroundColor": "#0B9F21",
+            "border": "1px solid #0B9F21",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+        {
+            "text": "Room structure",
+            "color": "#ffffff",
+            "backgroundColor": "#0B9F21",
+            "border": "1px solid #0B9F21",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },        
+        {
+            "text": "Generate the entrance room",
+            "color": "#ffffff",
+            "backgroundColor": "#0C4B15",
+            "border": "1px solid #0C4B15",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "TOOLS Registration",
+            "color": "#ffffff",
+            "backgroundColor": "#911151",
+            "border": "1px solid #911151",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },         
         {
             "text": "NOTE:",
             "color": "#ffffff",
@@ -53,6 +283,30 @@
             "borderRadius": "3px",
             "isWholeLine": false
         },
+        {
+            "text": "COMPLETION:",
+            "color": "#ffffff",
+            "backgroundColor": "#0062FF",
+            "border": "1px solid #0062FF",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "MESSAGES:",
+            "color": "#ffffff",
+            "backgroundColor": "#069649",
+            "border": "1px solid #069649",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                      
+        {
+            "text": "TO BE REMOVED",
+            "color": "#ffffff",
+            "backgroundColor": "#031E4A",
+            "border": "1px solid #031E4A",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },        
         {
             "text": "REF:",
             "color": "#000000",
@@ -66,6 +320,22 @@
             "color": "#000000",
             "backgroundColor": "#F6FF00",
             "border": "1px solid #F6FF00",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+        {
+            "text": "REMARK:",
+            "color": "#2A2828",
+            "backgroundColor": "#D8D4D4",
+            "border": "1px solid #D8D4D4",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },        
+        {
+            "text": "ANSWER:",
+            "color": "#000000",
+            "backgroundColor": "#07BF2C",
+            "border": "1px solid #07BF2C",
             "borderRadius": "3px",
             "isWholeLine": false
         },
@@ -224,11 +494,83 @@
         {
             "text": "TOOLS:",
             "color": "#ffffff",
+            "backgroundColor": "#320321",
+            "border": "1px solid #320321",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+        {
+            "text": "[TOOLS]",
+            "color": "#ffffff",
             "backgroundColor": "#D10E89",
             "border": "1px solid #D10E89",
             "borderRadius": "3px",
             "isWholeLine": false
+        },   
+        {
+            "text": "DESCRIPTION:",
+            "color": "#ffffff",
+            "backgroundColor": "#4D81D3",
+            "border": "1px solid #4D81D3",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "PARAMETERS:",
+            "color": "#ffffff",
+            "backgroundColor": "#458C5D",
+            "border": "1px solid #458C5D",
+            "borderRadius": "3px",
+            "isWholeLine": false
         },
+        {
+            "text": "PARAMETER:",
+            "color": "#ffffff",
+            "backgroundColor": "#458C5D",
+            "border": "1px solid #458C5D",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                            
+        {
+            "text": "[RAG]",
+            "color": "#ffffff",
+            "backgroundColor": "#056C8C",
+            "border": "1px solid #056C8C",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+         {
+            "text": "SIMILARITY SEARCH:",
+            "color": "#ffffff",
+            "backgroundColor": "#2887C2",
+            "border": "1px solid #2887C2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+         {
+            "text": "SIMILARITIES:",
+            "color": "#ffffff",
+            "backgroundColor": "#2887C2",
+            "border": "1px solid #2887C2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },          
+        {
+            "text": "[VECTOR STORE]",
+            "color": "#ffffff",
+            "backgroundColor": "#CB0FAF",
+            "border": "1px solid #CB0FAF",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                        
+        {
+            "text": "TALK TO:",
+            "color": "#ffffff",
+            "backgroundColor": "#93034D",
+            "border": "1px solid #93034D",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },             
         {
             "text": "AGENT:",
             "color": "#ffffff",
@@ -238,10 +580,50 @@
             "isWholeLine": false
         },
         {
+            "text": "[REMOTE]",
+            "color": "#000000",
+            "backgroundColor": "#0FD3E1",
+            "border": "1px solid #0FD3E1",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },        
+        {
+            "text": "[FAKE]",
+            "color": "#000000",
+            "backgroundColor": "#B0EABD",
+            "border": "1px solid #B0EABD",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },          
+        {
+            "text": "EMBEDDING AGENT:",
+            "color": "#ffffff",
+            "backgroundColor": "#055C3F",
+            "border": "1px solid #055C3F",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "EMBEDDINGS:",
+            "color": "#ffffff",
+            "backgroundColor": "#055C3F",
+            "border": "1px solid #055C3F",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "TOOLS AGENT:",
+            "color": "#ffffff",
+            "backgroundColor": "#EB1090",
+            "border": "1px solid #EB1090",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                 
+        {
             "text": "AGENTS:",
             "color": "#ffffff",
-            "backgroundColor": "#360ABC",
-            "border": "1px solid #360ABC",
+            "backgroundColor": "#9680D5",
+            "border": "1px solid #9680D5",
             "borderRadius": "3px",
             "isWholeLine": false
         },
@@ -253,6 +635,86 @@
             "borderRadius": "3px",
             "isWholeLine": false
         },
+        {
+            "text": "[COMPLETION]",
+            "color": "#000000",
+            "backgroundColor": "#17D1EA",
+            "border": "1px solid #17D1EA",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[FINISH REASON]",
+            "color": "#FFFFFF",
+            "backgroundColor": "#099631",
+            "border": "1px solid #099631",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },          
+        {
+            "text": "MEMORY:",
+            "color": "#FFFFFF",
+            "backgroundColor": "#B416BD",
+            "border": "1px solid #B416BD",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "CONVERSATION HISTORY:",
+            "color": "#FFFFFF",
+            "backgroundColor": "#B416BD",
+            "border": "1px solid #B416BD",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "MEMORY AGENT:",
+            "color": "#FFFFFF",
+            "backgroundColor": "#B416BD",
+            "border": "1px solid #B416BD",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[TOOL CALLS]",
+            "color": "#ffffff",
+            "backgroundColor": "#E3141B",
+            "border": "1px solid #E3141B",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+        {
+            "text": "[TOOL CALL RESULT]",
+            "color": "#ffffff",
+            "backgroundColor": "#08B271",
+            "border": "1px solid #08B271",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },        
+        {
+            "text": "[COMMAND]",
+            "color": "#07E32C",
+            "backgroundColor": "#18191A",
+            "border": "1px solid #18191A",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[EXEC FUNCTION]",
+            "color": "#07E32C",
+            "backgroundColor": "#18191A",
+            "border": "1px solid #18191A",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },          
+        {
+            "text": "[TESTING]",
+            "color": "#000000",
+            "backgroundColor": "#24DA0C",
+            "border": "1px solid #24DA0C",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                
         {
             "text": "TOOLS CATALOG:",
             "color": "#ffffff",
@@ -270,6 +732,22 @@
             "isWholeLine": false
         },
         {
+            "text": "[MCP]",
+            "color": "#ffffff",
+            "backgroundColor": "#7305D2",
+            "border": "1px solid #7305D2",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[DIRECT CALL TO MCP]",
+            "color": "#000000",
+            "backgroundColor": "#3CE783",
+            "border": "1px solid #3CE783",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                      
+        {
             "text": "TOOL CALLS:",
             "color": "#ffffff",
             "backgroundColor": "#E3141B",
@@ -277,54 +755,7 @@
             "borderRadius": "3px",
             "isWholeLine": false
         },
-        {
-            "text": "TOOL 1:",
-            "color": "#ffffff",
-            "backgroundColor": "#27A34F",
-            "border": "1px solid #27A34F",
-            "borderRadius": "3px",
-            "isWholeLine": false
-        },
-        {
-            "text": "TOOL 2:",
-            "color": "#ffffff",
-            "backgroundColor": "#2887C2",
-            "border": "1px solid #2887C2",
-            "borderRadius": "3px",
-            "isWholeLine": false
-        },
-        {
-            "text": "TOOL 3:",
-            "color": "#ffffff",
-            "backgroundColor": "#3330C4",
-            "border": "1px solid #3330C4",
-            "borderRadius": "3px",
-            "isWholeLine": false
-        },
-        {
-            "text": "TOOL 4:",
-            "color": "#ffffff",
-            "backgroundColor": "#7D30C4",
-            "border": "1px solid #7D30C4",
-            "borderRadius": "3px",
-            "isWholeLine": false
-        },
-        {
-            "text": "TOOL 5:",
-            "color": "#ffffff",
-            "backgroundColor": "#BA30C4",
-            "border": "1px solid #BA30C4",
-            "borderRadius": "3px",
-            "isWholeLine": false
-        },
-        {
-            "text": "TOOL 6:",
-            "color": "#ffffff",
-            "backgroundColor": "#B91F5F",
-            "border": "1px solid #B91F5F",
-            "borderRadius": "3px",
-            "isWholeLine": false
-        },
+
         {
             "text": "PROMPT:",
             "color": "#ffffff",
@@ -333,6 +764,25 @@
             "borderRadius": "3px",
             "isWholeLine": false
         },
+
+        {
+            "text": "CHAT COMPLETION:",
+            "color": "#ffffff",
+            "backgroundColor": "#B91F5F",
+            "border": "1px solid #B91F5F",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+
+        {
+            "text": "EMBEDDING COMPLETION:",
+            "color": "#ffffff",
+            "backgroundColor": "#E51D70",
+            "border": "1px solid #E51D70",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+
         {
             "text": "SYSTEM MESSAGE:",
             "color": "#ffffff",
@@ -342,13 +792,21 @@
             "isWholeLine": false
         },
         {
+            "text": "SYSTEM INSTRUCTIONS:",
+            "color": "#ffffff",
+            "backgroundColor": "#0A6E15",
+            "border": "1px solid #0A6E15",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },           
+        {
             "text": "USER MESSAGE:",
             "color": "#ffffff",
             "backgroundColor": "#EA5B03",
             "border": "1px solid #EA5B03",
             "borderRadius": "3px",
             "isWholeLine": false
-        },
+        },        
         {
             "text": "ASSISTANT MESSAGE:",
             "color": "#ffffff",
@@ -397,5 +855,77 @@
             "borderRadius": "3px",
             "isWholeLine": false
         },
+        {
+            "text": "WAITING:",
+            "color": "#ffffff",
+            "backgroundColor": "#EA5B03",
+            "border": "1px solid #EA5B03",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },    
+        {
+            "text": "[CONFIRMATION]",
+            "color": "#000000",
+            "backgroundColor": "#24DA0C",
+            "border": "1px solid #24DA0C",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },      
+        {
+            "text": "[YES]",
+            "color": "#FFFFFF",
+            "backgroundColor": "#199E08",
+            "border": "1px solid #199E08",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },
+        {
+            "text": "**GHOST**",
+            "color": "#F7F3F3",
+            "backgroundColor": "#6B6D70",
+            "border": "1px solid #6B6D70",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "**GUARD**",
+            "color": "#ffffff",
+            "backgroundColor": "#0062FF",
+            "border": "1px solid #0062FF",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },    
+        {
+            "text": "**SORCERER**",
+            "color": "#ffffff",
+            "backgroundColor": "#D80C8A",
+            "border": "1px solid #D80C8A",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },    
+        {
+            "text": "**MERCHANT**",
+            "color": "#ffffff",
+            "backgroundColor": "#239648",
+            "border": "1px solid #239648",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "**HEALER**",
+            "color": "#ffffff",
+            "backgroundColor": "#B76167",
+            "border": "1px solid #B76167",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },       
+        {
+            "text": "**BOSS**",
+            "color": "#ffffff",
+            "backgroundColor": "#D71C29",
+            "border": "1px solid #D71C29",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                                  
     ]
 }

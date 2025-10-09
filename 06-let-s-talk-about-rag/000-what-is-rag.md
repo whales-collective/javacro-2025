@@ -12,5 +12,7 @@ paginate: true
 # RAG: retrieval augmented generation
 > Breaking information into chunks
 
-## Make context smaller and more relevant
+## RAG will help to make the context 
+### - smaller and 
+### - more relevant
 

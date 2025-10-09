@@ -8,8 +8,9 @@ const llm = new ChatOpenAI({
   configuration: {
     baseURL: process.env.MODEL_RUNNER_BASE_URL || `http://localhost:12434/engines/llama.cpp/v1/`,
   },
-  temperature: 0.5,
-  repeatPenalty: 2.2,
+  temperature: 0.5, // Controls randomness and creativity in responses
+  topP: 0.7, // Controls diversity by limiting token selection
+
 });
 
 let exit = false;

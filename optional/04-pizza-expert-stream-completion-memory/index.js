@@ -1,7 +1,6 @@
 import { ChatOpenAI } from "@langchain/openai";
 import prompts from "prompts";
 import dotenv from "dotenv";
-import fs from "fs";
 
 dotenv.config();
 
@@ -12,22 +11,13 @@ const llm = new ChatOpenAI({
     baseURL: process.env.MODEL_RUNNER_BASE_URL,
   },
   temperature: 0.5,
-  repeatPenalty: 2.2,
+  topP: 0.7,
+
 });
 
-// SYSTEM INSTRUCTIONS: 
-let systemInstructions = fs.readFileSync(process.env.SYSTEM_INSTRUCTIONS_PATH || "./docs/system-instructions.md", 'utf8')
+let systemInstructions = process.env.SYSTEM_INSTRUCTIONS || `You are an Hawaiian pizza expert.`;
 
-let contentPath = process.env.CONTENT_PATH || "./data"
-let knowledgeDocument = fs.readFileSync(contentPath + "/hawaiian-pizza-knowledge-base.md", 'utf8')
-let popularQuestionsDocument = fs.readFileSync(contentPath + "/popular-questions-and-answers.md", 'utf8')
-
-let knowledgeBase = `KNOWLEDGE BASE: 
-  ${knowledgeDocument}
-
-  POPULAR QUESTIONS AND ANSWERS:
-  ${popularQuestionsDocument}
-`
+let knowledgeBase = process.env.KNOWLEDGE_BASE || ``
 
 // MESSAGES:
 let messages = [
@@ -47,29 +37,19 @@ while (!exit) {
   if (userQuestion == "/bye") {
     console.log("👋 See you later!");
     exit = true;
-  } else if (userQuestion == "/messages") {
-    console.log("📝 Message history:");
-    messages.forEach((message, index) => {
-      const [role, content] = message;
-      console.log(`${index + 1}. [${role}] ${content.substring(0, 100)}${content.length > 100 ? '...' : ''}`);
-    });
-    console.log("\n");
   } else {
-
     // MEMORY:
     messages.push(["user", userQuestion]);
 
     let answer = "";
+    // COMPLETION:
     const stream = await llm.stream(messages);
     for await (const chunk of stream) {
       process.stdout.write(chunk.content);
       answer += chunk.content;
     }
     console.log("\n");
-    
     // MEMORY:
     messages.push(["assistant", answer]);
-
-    console.log("\n");
   }
 }

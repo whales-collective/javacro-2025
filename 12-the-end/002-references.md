@@ -1,10 +1,14 @@
 ---
 marp: true
-html: true
 theme: default
 paginate: true
 ---
-# 🌍 References
+### 🌍 🐳 References
+
+- Docker Model Runer: [https://docs.docker.com/ai/model-runner/](https://docs.docker.com/ai/model-runner/)
+- A Quickstart Guide to Model Runner: [https://www.docker.com/blog/run-llms-locally/](https://www.docker.com/blog/run-llms-locally/)
+
+### 🌍 References about 🐣 SLMs
 
 - Why JetBrains is Betting on Focal LLMs: https://blog.jetbrains.com/ai/2025/07/small-models-big-impact-why-jetbrains-is-betting-on-focal-llms
 - Small Language Models are the Future of Agentic AI: https://research.nvidia.com/labs/lpr/slm-agents/

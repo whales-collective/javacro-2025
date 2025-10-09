@@ -80,7 +80,7 @@ let langchainTools = transformToLangchainTools(mcpTools);
 
 // ---[END][Model Context Protocol]-------
 
-const llm = new ChatOpenAI({
+const chatModelWithToolsSupport = new ChatOpenAI({
   model: process.env.MODEL_RUNNER_LLM_CHAT || `hf.co/menlo/jan-nano-gguf:q4_k_m`,
   apiKey: "",
   configuration: {
@@ -93,7 +93,7 @@ const llm = new ChatOpenAI({
   top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
 });
 
-const llmEmbeddings = new OpenAIEmbeddings({
+const embeddingsModel = new OpenAIEmbeddings({
     model: process.env.MODEL_RUNNER_LLM_EMBEDDING || "ai/granite-embedding-multilingual:latest",
     configuration: {
     baseURL: process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/",
@@ -108,7 +108,7 @@ const llmEmbeddings = new OpenAIEmbeddings({
 //!  Create the embeddings
 //! ----------------------------------------------------------------
 console.log("========================================================")
-console.log("🦜 Embeddings model:", llmEmbeddings.model)
+console.log("🦜 Embeddings model:", embeddingsModel.model)
 console.log("📝 Creating embeddings...")
 let contentPath = process.env.CONTENT_PATH || "./data"
 
@@ -122,7 +122,7 @@ const splitter = RecursiveCharacterTextSplitter.fromLanguage("markdown", {
 let contentFromFiles = readTextFilesRecursively(contentPath, [".md"])
 
 // Initialize the vector store
-const vectorStore = new MemoryVectorStore(llmEmbeddings)
+const vectorStore = new MemoryVectorStore(embeddingsModel)
 
 // Create the embeddings and add them to the vector store
 const chunks = await splitter.createDocuments(contentFromFiles);
@@ -138,7 +138,7 @@ console.log("========================================================")
 // ---[START][Tool calling]-------
 
 // Create the Model Runner Client for Tools
-const llmWithTools = llm.bindTools(langchainTools)
+const llmWithTools = chatModelWithToolsSupport.bindTools(langchainTools)
 
 // ---[END][Tool calling]-------
 
@@ -231,7 +231,7 @@ while (!exit) {
     messages.push(["user", userMessage])
 
     let assistantResponse = ''
-    const stream = await llm.stream(messages);
+    const stream = await chatModelWithToolsSupport.stream(messages);
     for await (const chunk of stream) {
       assistantResponse += chunk.content
       process.stdout.write(chunk.content);

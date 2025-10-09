@@ -13,8 +13,8 @@ function isGoodCosineSimilarity(similarity) {
 }
 
 async function main() {
-  //const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/";
-  const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://model-runner.docker.internal/engines/llama.cpp/v1";
+  const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/";
+  //const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://model-runner.docker.internal/engines/llama.cpp/v1";
   const embeddingsModel = process.env.MODEL_RUNNER_EMBEDDING || "ai/mxbai-embed-large";
 
 

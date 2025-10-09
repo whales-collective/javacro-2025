@@ -33,10 +33,9 @@ const chunks = [
 
 async function main() {
 
-  //const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/";
-  const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://model-runner.docker.internal/engines/llama.cpp/v1";
+  const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/";
+  //const baseURL = process.env.MODEL_RUNNER_BASE_URL || "http://model-runner.docker.internal/engines/llama.cpp/v1";
   const embeddingsModel = process.env.MODEL_RUNNER_EMBEDDING || "ai/mxbai-embed-large";
-
 
   const chatModel = process.env.MODEL_RUNNER_LLM_CHAT || "ai/qwen2.5:0.5B-F16";
 
@@ -72,6 +71,8 @@ async function main() {
     try {
       // EMBEDDING COMPLETION:
       const chunkEmbedding = await embeddings.embedQuery(chunk);
+
+      //console.log("✅ Chunk embedded:", chunkEmbedding);
       
       const vectorRecord = new VectorRecord('', chunk, chunkEmbedding);
       store.save(vectorRecord);
