@@ -19,4 +19,4 @@ paginate: true
 
 </br></br></br></br></br>
 
-#### 🤗 Thank you JavaCro
+#### 🤗 Many thanks to the **JavaCro team** and thank you **all** for being here

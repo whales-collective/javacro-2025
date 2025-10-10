@@ -72,11 +72,14 @@ services:
       MCP_SERVER_BASE_URL: http://mcp-gateway:9011
 
       HISTORY_MESSAGES: 3
+      MAX_SIMILARITIES: 3
+
       OPTION_TEMPERATURE: 0.0
       OPTION_REPEAT_LAST_N: 2
       OPTION_REPEAT_PENALTY: 2.2
       OPTION_TOP_P: 0.5
       OPTION_TOP_K: 10
+      
       SYSTEM_INSTRUCTIONS_PATH: /app/docs/system-instructions.md
       CONTENT_PATH: /app/data    
 

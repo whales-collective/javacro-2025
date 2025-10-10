@@ -7,16 +7,19 @@ services:
     environment:
       TERM: xterm-256color
 
-      HISTORY_MESSAGES: 3
-      MAX_SIMILARITIES: 3
+      HISTORY_MESSAGES: 2
+      MAX_SIMILARITIES: 2
       
-      OPTION_TEMPERATURE: 0.15
+      OPTION_TEMPERATURE: 0.0
       OPTION_TOP_P: 0.75
-      OPTION_TOP_K: 15
-      OPTION_REPEAT_PENALTY: 1.3
-      OPTION_PRESENCE_PENALTY: 1.7
-      OPTION_MAX_TOKENS: 160
-      OPTION_MIN_P: 0.1
+      # OPTION_TOP_K: 15
+      # OPTION_REPEAT_PENALTY: 1.3
+      # OPTION_PRESENCE_PENALTY: 1.7
+      # OPTION_MAX_TOKENS: 160
+      # OPTION_MIN_P: 0.1
+
+      CHUNK_SIZE: 768
+      CHUNK_OVERLAP: 256
 
       SYSTEM_INSTRUCTIONS_PATH: /app/docs/system-instructions.md
       CONTENT_PATH: /app/data    

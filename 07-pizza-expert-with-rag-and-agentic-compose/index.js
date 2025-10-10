@@ -18,11 +18,11 @@ const chatModel = new ChatOpenAI({
   },
   temperature: parseFloat(process.env.OPTION_TEMPERATURE) || 0.0,
   top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
-  top_k: parseInt(process.env.OPTION_TOP_K) || 10,
-  repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
-  presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
-  max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
-  min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
+  // top_k: parseInt(process.env.OPTION_TOP_K) || 10,
+  // repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
+  // presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
+  // max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
+  // min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
 
 });
 
@@ -48,8 +48,8 @@ let contentPath = process.env.CONTENT_PATH || "./data"
 
 // Create a "text splitter" to break the documents into smaller chunks
 const splitter = RecursiveCharacterTextSplitter.fromLanguage("markdown", {
-  chunkSize: 512,
-  chunkOverlap: 128,
+  chunkSize: parseInt(process.env.CHUNK_SIZE) || 768,
+  chunkOverlap: parseInt(process.env.CHUNK_OVERLAP) || 256,
 })
 
 // Read the text files recursively from the content path
@@ -80,11 +80,12 @@ const conversationMemory = new Map()
 
 
 let exit = false;
+// CHAT LOOP:
 while (!exit) {
   const { userMessage } = await prompts({
     type: "text",
     name: "userMessage",
-    message: "🤖 Your question: ",
+    message: `🤖 Your question (${chatModel.model}): `,
     validate: (value) => (value ? true : "😡 Question cannot be empty"),
   });
 

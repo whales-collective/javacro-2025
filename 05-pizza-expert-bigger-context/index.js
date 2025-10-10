@@ -5,14 +5,20 @@ import fs from "fs";
 
 dotenv.config();
 
-const llm = new ChatOpenAI({
+const chatModel = new ChatOpenAI({
   model: process.env.MODEL_RUNNER_LLM_CHAT || `ai/qwen2.5:latest`,
   apiKey: "",
   configuration: {
     baseURL: process.env.MODEL_RUNNER_BASE_URL,
   },
-  temperature: 0.5,
-  repeatPenalty: 2.2,
+  temperature: parseFloat(process.env.OPTION_TEMPERATURE) || 0.0,
+  top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
+  top_k: parseInt(process.env.OPTION_TOP_K) || 10,
+  repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
+  presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
+  max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
+  min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
+  
 });
 
 // SYSTEM INSTRUCTIONS: 
@@ -36,11 +42,12 @@ let messages = [
 ]
 
 let exit = false;
+// CHAT LOOP:
 while (!exit) {
   const { userQuestion } = await prompts({
     type: "text",
     name: "userQuestion",
-    message: "🤖 Your question: ",
+    message: `🤖 Your question (${chatModel.model}): `,
     validate: (value) => (value ? true : "😡 Question cannot be empty"),
   });
 
@@ -60,7 +67,7 @@ while (!exit) {
     messages.push(["user", userQuestion]);
 
     let answer = "";
-    const stream = await llm.stream(messages);
+    const stream = await chatModel.stream(messages);
     for await (const chunk of stream) {
       process.stdout.write(chunk.content);
       answer += chunk.content;

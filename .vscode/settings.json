@@ -92,6 +92,14 @@
             "isWholeLine": false
         }, 
         {
+            "text": "CHAT LOOP:",
+            "color": "#ffffff",
+            "backgroundColor": "#3E17C1",
+            "border": "1px solid #3E17C1",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },        
+        {
             "text": "[MCP Server]",
             "color": "#ffffff",
             "backgroundColor": "#BE0ECE",

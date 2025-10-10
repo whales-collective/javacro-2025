@@ -101,8 +101,9 @@ const embeddingsModel = new OpenAIEmbeddings({
     }
 })
 
+const maxSimilarities = parseInt(process.env.MAX_SIMILARITIES) || 3
 
-// ---[BEGIN][Create the embeddings]-------
+// ---[BEGIN:][Create the embeddings]-------
 
 //! ----------------------------------------------------------------
 //!  Create the embeddings
@@ -132,7 +133,7 @@ await vectorStore.addDocuments(chunks);
 
 console.log("========================================================")
 
-// ---[END][Create the embeddings]-------
+// ---[END:][Create the embeddings]-------
 
 
 // ---[START][Tool calling]-------
@@ -215,7 +216,7 @@ while (!exit) {
     //? ----------------------------------------------------------------
     //? Search for similarities
     //? ----------------------------------------------------------------
-    const similaritySearchResults = await vectorStore.similaritySearch(userMessage,3)
+    const similaritySearchResults = await vectorStore.similaritySearch(userMessage, maxSimilarities)
 
     //? Create the knowledge base from the similarity search results
     let knowledgeBase = `KNOWLEDGE BASE:\n`
