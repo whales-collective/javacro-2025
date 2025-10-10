@@ -21,3 +21,5 @@ paginate: true
 - Giving **"coordinates"** to data in a mathematical space where:
   - **Similar** elements are <span class="forestgreen">**close**</span>
   - **Different** elements are <span class="indianred">**distant**</span>
+## Usefulness
+**Semantic search**: Find similar documents, recommend similar products, ...
