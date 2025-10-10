@@ -5,6 +5,7 @@ import fs from "fs";
 
 dotenv.config();
 
+// Define [CHAT MODEL] Connection
 const chatModel = new ChatOpenAI({
   model: process.env.MODEL_RUNNER_LLM_CHAT || `ai/qwen2.5:latest`,
   apiKey: "",
@@ -13,11 +14,6 @@ const chatModel = new ChatOpenAI({
   },
   temperature: parseFloat(process.env.OPTION_TEMPERATURE) || 0.0,
   top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
-  // top_k: parseInt(process.env.OPTION_TOP_K) || 10,
-  // repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
-  // presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
-  // max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
-  // min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
 
 });
 
@@ -67,6 +63,7 @@ while (!exit) {
     messages.push(["user", userQuestion]);
 
     let answer = "";
+    // STREAMING COMPLETION:
     const stream = await chatModel.stream(messages);
     for await (const chunk of stream) {
       process.stdout.write(chunk.content);
