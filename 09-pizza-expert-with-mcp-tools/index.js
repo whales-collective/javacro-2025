@@ -8,9 +8,6 @@ import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import prompts from "prompts";
 import fs from 'fs';
 
-import { z } from "zod"
-import { tool } from "@langchain/core/tools"
-
 // MCP helpers
 import { fetchTools, transformToLangchainTools } from "./mcp.helpers.js"
 //! MCP
@@ -18,11 +15,7 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 
 
-// ---[BEGIN][Model Context Protocol]-------
-
-//! ----------------------------------------------------------------
-//! Create the MCP Client
-//! ----------------------------------------------------------------
+// ---[BEGIN:][MCP]-------
 // Set up the StreamableHTTP client transport
 const bearerToken = process.env.BEARER_TOKEN;
 
@@ -37,7 +30,7 @@ const transport = new StreamableHTTPClientTransport(new URL(`${process.env.MCP_S
   },
 });
 
-// Create the MCP Client
+// Create the [MCP] Client
 const mcpClient = new Client(
   {
     name: "mcp-http-client",
@@ -60,7 +53,7 @@ const mcpClient = new Client(
 await mcpClient.connect(transport);
 console.log("🟢✅ Connected to MCP Server!");
 
-//! Fetch tools
+// Fetch [TOOLS] from the [MCP] server
 let mcpTools = await fetchTools(mcpClient);
 
 // display the fetched tools
@@ -76,10 +69,12 @@ if (mcpTools && mcpTools.tools) {
 
 console.log("🛠️ Transforming MCP tools to Langchain tools...");
 
+// Transform [MCP] [TOOLS] to [LangChain] tools
 let langchainTools = transformToLangchainTools(mcpTools);
 
-// ---[END][Model Context Protocol]-------
+// ---[END:][MCP]-------
 
+// Define [CHAT MODEL] Connection with [TOOLS] support
 const chatModelWithToolsSupport = new ChatOpenAI({
   model: process.env.MODEL_RUNNER_LLM_CHAT || `hf.co/menlo/jan-nano-gguf:q4_k_m`,
   apiKey: "",
@@ -87,12 +82,10 @@ const chatModelWithToolsSupport = new ChatOpenAI({
     baseURL: process.env.MODEL_RUNNER_BASE_URL || "http://localhost:12434/engines/llama.cpp/v1/",
   },
   temperature: parseFloat(process.env.OPTION_TEMPERATURE) || 0.0,
-  repeat_last_n: parseInt(process.env.OPTION_REPEAT_LAST_N) || 2,
-  repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
   top_k: parseInt(process.env.OPTION_TOP_K) || 10,
-  top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
 });
 
+// Define [EMBEDDINGS MODEL] Connection
 const embeddingsModel = new OpenAIEmbeddings({
     model: process.env.MODEL_RUNNER_LLM_EMBEDDING || "ai/granite-embedding-multilingual:latest",
     configuration: {
@@ -103,17 +96,16 @@ const embeddingsModel = new OpenAIEmbeddings({
 
 const maxSimilarities = parseInt(process.env.MAX_SIMILARITIES) || 3
 
-// ---[BEGIN:][Create the embeddings]-------
-
-//! ----------------------------------------------------------------
-//!  Create the embeddings
-//! ----------------------------------------------------------------
+// ---[BEGIN:][CHUNKS & EMBEDDINGS]-------
+// ----------------------------------------------------------------
+//  Create the embeddings
+// ----------------------------------------------------------------
 console.log("========================================================")
 console.log("🦜 Embeddings model:", embeddingsModel.model)
 console.log("📝 Creating embeddings...")
 let contentPath = process.env.CONTENT_PATH || "./data"
 
-// Create a "text splitter" to break the documents into smaller chunks
+// Create a [TEXT SPLITTER] to break the documents into smaller [CHUNKS]
 const splitter = RecursiveCharacterTextSplitter.fromLanguage("markdown", {
   chunkSize: 512,
   chunkOverlap: 128,
@@ -122,40 +114,35 @@ const splitter = RecursiveCharacterTextSplitter.fromLanguage("markdown", {
 // Read the text files recursively from the content path
 let contentFromFiles = readTextFilesRecursively(contentPath, [".md"])
 
-// Initialize the vector store
+// Initialize the [VECTOR STORE]
 const vectorStore = new MemoryVectorStore(embeddingsModel)
 
-// Create the embeddings and add them to the vector store
+// Create the [EMBEDDINGS] and add them to the [VECTOR STORE]
 const chunks = await splitter.createDocuments(contentFromFiles);
 console.log("📝 Number of chunks created:", chunks.length);
 await vectorStore.addDocuments(chunks);
 
-
 console.log("========================================================")
 
-// ---[END:][Create the embeddings]-------
+// ---[END:][CHUNKS & EMBEDDINGS]-------
 
 
-// ---[START][Tool calling]-------
+// Create the [CHAT MODEL] Runner Client for [TOOLS]
+const runner = chatModelWithToolsSupport.bindTools(langchainTools)
 
-// Create the Model Runner Client for Tools
-const llmWithTools = chatModelWithToolsSupport.bindTools(langchainTools)
-
-// ---[END][Tool calling]-------
-
-
+// SYSTEM INSTRUCTIONS:
 // Load the system instructions from a file
 let systemInstructions = fs.readFileSync(process.env.SYSTEM_INSTRUCTIONS_PATH || "./docs/system-instructions.md", 'utf8')
 
-
-//! ----------------------------------------------------------------
+// ----------------------------------------------------------------
 // Initialize a Map to store conversations by session
-//! ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// HISTORY:
 const conversationMemory = new Map()
 // Get conversation history for this session
 
-
 let exit = false;
+// CHAT LOOP:
 while (!exit) {
   const { userMessage } = await prompts({
     type: "text",
@@ -169,23 +156,27 @@ while (!exit) {
     exit = true;
   } else {
 
+    // HISTORY: Get the conversation history for this session
     const history = getConversationHistory("default-session-id")
 
-    //? -------------------------------------------------
-    //? Check if there are one or several tool calls
-    //? -------------------------------------------------
-    let llmOutput = await llmWithTools.invoke(userMessage,{
+    // -------------------------------------------------
+    // [TOOL CALLS]
+    // -------------------------------------------------
+    
+    // Invoke the runner for [TOOL CALLS DETECTION]
+    let output = await runner.invoke(userMessage,{
       parallel_tool_calls: true
     })
 
-    //? Detected tools and Invoke the tools
+    // Parse tools and Invoke the tools
     let toolCallsResults = ""
     //console.log("🟢 Tool calls detection...")
-    for (let toolCall of llmOutput.tool_calls) {
+    for (let toolCall of output.tool_calls) {
         console.log("- 🛠️ Tool:", toolCall.name, "Args:", toolCall.args)
 
         toolCallsResults += `### ${toolCall.name} ${toolCall.args}:\n`
 
+        // [TOOL CALL RESULT]
         let result = await mcpClient.callTool({
           name: toolCall.name,
           arguments: toolCall.args,
@@ -195,30 +186,29 @@ while (!exit) {
         console.log("✅ Result:", result)
     }
 
-    //? Construct messages array with:
+    // Construct messages array with:
     // system instructions, 
     // context, history, and new message
+    // MESSAGES: + HISTORY:
     let messages = [
         ...history,
         ["system", systemInstructions],
-        //["system", knowledgeBase],
-        //["user", userMessage]
     ]
 
     if (toolCallsResults.length > 0) {
       console.log("🟢 Tools calling...")
+      // MESSAGES:
       messages.push(["system", toolCallsResults])
     } else { // Regular chat without tools
       console.log("🔵 Regular chat")
-
     }
     
-    //? ----------------------------------------------------------------
-    //? Search for similarities
-    //? ----------------------------------------------------------------
+    // ----------------------------------------------------------------
+    // SIMILARITY SEARCH:
+    // ----------------------------------------------------------------
     const similaritySearchResults = await vectorStore.similaritySearch(userMessage, maxSimilarities)
 
-    //? Create the knowledge base from the similarity search results
+    // Create the [KNOWLEDGE BASE] from the [SIMILARITY SEARCH RESULTS]
     let knowledgeBase = `KNOWLEDGE BASE:\n`
     for (const doc of similaritySearchResults) {
       console.log("📝",`* ${doc.pageContent} [${JSON.stringify(doc.metadata, null)}]`);
@@ -228,6 +218,7 @@ while (!exit) {
     console.log("========================================================")
     console.log()
 
+    // MESSAGES:
     messages.push(["system", knowledgeBase])
     messages.push(["user", userMessage])
 
@@ -239,11 +230,9 @@ while (!exit) {
     }
     console.log("\n");
 
-    //? Add both user message and assistant response to history
+    // HISTORY: Add both user message and assistant response to history
     addToHistory("default-session-id", "user", userMessage)
     addToHistory("default-session-id", "assistant", assistantResponse)
-
-
   }
 }
 

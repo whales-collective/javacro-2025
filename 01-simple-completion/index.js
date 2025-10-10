@@ -1,8 +1,8 @@
 import { ChatOpenAI } from "@langchain/openai";
 import prompts from "prompts";
 
-
-const llm = new ChatOpenAI({
+// Define [CHAT MODEL] Connection
+const chatModel = new ChatOpenAI({
   model: process.env.MODEL_RUNNER_LLM_CHAT || `ai/qwen2.5:latest`,
   apiKey: "",
   configuration: {
@@ -14,6 +14,7 @@ const llm = new ChatOpenAI({
 });
 
 let exit = false;
+// CHAT LOOP:
 while (!exit) {
   const { userQuestion } = await prompts({
     type: "text",
@@ -27,11 +28,13 @@ while (!exit) {
     exit = true;
   } else {
 
+    // MESSAGES:
     let messages = [
         ["user", userQuestion]
     ]
 
-    const response = await llm.invoke(messages)
+    // COMPLETION:
+    const response = await chatModel.invoke(messages)
     console.log(`Answer: ${response.content}`)
     
     console.log("\n");

@@ -5,11 +5,10 @@ import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters'
 import { readTextFilesRecursively } from './helpers.js'
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 
-
 import prompts from "prompts";
 import fs from 'fs';
 
-
+// Define [CHAT MODEL] Connection
 const chatModel = new ChatOpenAI({
   model: process.env.MODEL_RUNNER_LLM_CHAT || `ai/qwen2.5:latest`,
   apiKey: "",
@@ -18,14 +17,9 @@ const chatModel = new ChatOpenAI({
   },
   temperature: parseFloat(process.env.OPTION_TEMPERATURE) || 0.0,
   top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
-  // top_k: parseInt(process.env.OPTION_TOP_K) || 10,
-  // repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
-  // presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
-  // max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
-  // min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
-
 });
 
+// Define [EMBEDDINGS MODEL] Connection
 const embeddingsModel = new OpenAIEmbeddings({
     model: process.env.MODEL_RUNNER_LLM_EMBEDDING || "ai/granite-embedding-multilingual:latest",
     configuration: {
@@ -36,17 +30,16 @@ const embeddingsModel = new OpenAIEmbeddings({
 
 const maxSimilarities = parseInt(process.env.MAX_SIMILARITIES) || 3
 
-// ---[BEGIN:][Create the embeddings]-------
-
-//! ----------------------------------------------------------------
-//!  Create the embeddings
-//! ----------------------------------------------------------------
+// ---[BEGIN:][CHUNKS & EMBEDDINGS]-------
+// ----------------------------------------------------------------
+//  Create the embeddings
+// ----------------------------------------------------------------
 console.log("========================================================")
 console.log("🦜 Embeddings model:", embeddingsModel.model)
 console.log("📝 Creating embeddings...")
 let contentPath = process.env.CONTENT_PATH || "./data"
 
-// Create a "text splitter" to break the documents into smaller chunks
+// Create a [TEXT SPLITTER] to break the documents into smaller [CHUNKS]
 const splitter = RecursiveCharacterTextSplitter.fromLanguage("markdown", {
   chunkSize: parseInt(process.env.CHUNK_SIZE) || 768,
   chunkOverlap: parseInt(process.env.CHUNK_OVERLAP) || 256,
@@ -55,29 +48,27 @@ const splitter = RecursiveCharacterTextSplitter.fromLanguage("markdown", {
 // Read the text files recursively from the content path
 let contentFromFiles = readTextFilesRecursively(contentPath, [".md"])
 
-// Initialize the vector store
+// Initialize the [VECTOR STORE]
 const vectorStore = new MemoryVectorStore(embeddingsModel)
 
-// Create the embeddings and add them to the vector store
+// Create the [EMBEDDINGS] and add them to the [VECTOR STORE]
 const chunks = await splitter.createDocuments(contentFromFiles);
 console.log("📝 Number of chunks created:", chunks.length);
 await vectorStore.addDocuments(chunks);
 
-
 console.log("========================================================")
 
-// ---[END:][Create the embeddings]-------
+// ---[END:][CHUNKS & EMBEDDINGS]-------
 
+// SYSTEM INSTRUCTIONS: 
 // Load the system instructions from a file
 let systemInstructions = fs.readFileSync(process.env.SYSTEM_INSTRUCTIONS_PATH || "./docs/system-instructions.md", 'utf8')
 
-
-//! ----------------------------------------------------------------
-// Initialize a Map to store conversations by session
-//! ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// HISTORY: Initialize a Map to store conversations by session
+// ----------------------------------------------------------------
 const conversationMemory = new Map()
 // Get conversation history for this session
-
 
 let exit = false;
 // CHAT LOOP:
@@ -96,14 +87,15 @@ while (!exit) {
     displayMessages("default-session-id");
   } else {
 
+    // HISTORY: Get the conversation history for this session
     const history = getConversationHistory("default-session-id")
 
-    //? ----------------------------------------------------------------
-    //? Search for similarities
-    //? ----------------------------------------------------------------
+    // ----------------------------------------------------------------
+    // SIMILARITY SEARCH:
+    // ----------------------------------------------------------------
     const similaritySearchResults = await vectorStore.similaritySearch(userMessage, maxSimilarities)
 
-    //? Create the knowledge base from the similarity search results
+    // Create the [KNOWLEDGE BASE] from the [SIMILARITY SEARCH RESULTS]
     let knowledgeBase = `KNOWLEDGE BASE:\n`
     for (const doc of similaritySearchResults) {
       console.log("📝",`* ${doc.pageContent} [${JSON.stringify(doc.metadata, null)}]`);
@@ -113,7 +105,7 @@ while (!exit) {
     console.log("========================================================")
     console.log()
 
-
+    // MESSAGES:
     let messages = [
         ...history,
         ["system", systemInstructions],
@@ -122,6 +114,7 @@ while (!exit) {
     ]
     
     let assistantResponse = ''
+    // STREAMING COMPLETION:
     const stream = await chatModel.stream(messages);
     for await (const chunk of stream) {
       assistantResponse += chunk.content
@@ -129,10 +122,9 @@ while (!exit) {
     }
     console.log("\n");
 
-    //? Add both user message and assistant response to history
+    // HISTORY: Add both user message and assistant response to history
     addToHistory("default-session-id", "user", userMessage)
     addToHistory("default-session-id", "assistant", assistantResponse)
-
 
   }
 }

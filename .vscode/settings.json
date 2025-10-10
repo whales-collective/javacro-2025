@@ -98,7 +98,55 @@
             "border": "1px solid #3E17C1",
             "borderRadius": "3px",
             "isWholeLine": false
-        },        
+        },    
+        {
+            "text": "[CHAT MODEL]",
+            "color": "#ffffff",
+            "backgroundColor": "#0F8E33",
+            "border": "1px solid #0F8E33",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },      
+        {
+            "text": "[EMBEDDINGS MODEL]",
+            "color": "#ffffff",
+            "backgroundColor": "#860909",
+            "border": "1px solid #860909",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "[EMBEDDINGS]",
+            "color": "#ffffff",
+            "backgroundColor": "#336AB6",
+            "border": "1px solid #336AB6",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },    
+        {
+            "text": "[CHUNKS]",
+            "color": "#ffffff",
+            "backgroundColor": "#336AB6",
+            "border": "1px solid #336AB6",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        }, 
+        {
+            "text": "[CHUNKS & EMBEDDINGS]",
+            "color": "#ffffff",
+            "backgroundColor": "#336AB6",
+            "border": "1px solid #336AB6",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },  
+        {
+            "text": "[TEXT SPLITTER]",
+            "color": "#ffffff",
+            "backgroundColor": "#E81E7C",
+            "border": "1px solid #E81E7C",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                                                  
         {
             "text": "[MCP Server]",
             "color": "#ffffff",
@@ -306,7 +354,15 @@
             "border": "1px solid #069649",
             "borderRadius": "3px",
             "isWholeLine": false
-        },                      
+        }, 
+        {
+            "text": "HISTORY:",
+            "color": "#ffffff",
+            "backgroundColor": "#069649",
+            "border": "1px solid #069649",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                              
         {
             "text": "TO BE REMOVED",
             "color": "#ffffff",
@@ -562,7 +618,15 @@
             "border": "1px solid #2887C2",
             "borderRadius": "3px",
             "isWholeLine": false
-        },          
+        },  
+         {
+            "text": "[SIMILARITY SEARCH RESULTS]",
+            "color": "#ffffff",
+            "backgroundColor": "#32729A",
+            "border": "1px solid #32729A",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                   
         {
             "text": "[VECTOR STORE]",
             "color": "#ffffff",
@@ -570,7 +634,23 @@
             "border": "1px solid #CB0FAF",
             "borderRadius": "3px",
             "isWholeLine": false
-        },                        
+        },  
+        {
+            "text": "[LangChain]",
+            "color": "#000000",
+            "backgroundColor": "#F4E67A",
+            "border": "1px solid #F4E67A",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },          
+        {
+            "text": "[KNOWLEDGE BASE]",
+            "color": "#ffffff",
+            "backgroundColor": "#6A095B",
+            "border": "1px solid #6A095B",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },                               
         {
             "text": "TALK TO:",
             "color": "#ffffff",
@@ -691,6 +771,14 @@
             "borderRadius": "3px",
             "isWholeLine": false
         },
+        {
+            "text": "[TOOL CALLS DETECTION]",
+            "color": "#ffffff",
+            "backgroundColor": "#9F1015",
+            "border": "1px solid #9F1015",
+            "borderRadius": "3px",
+            "isWholeLine": false
+        },        
         {
             "text": "[TOOL CALL RESULT]",
             "color": "#ffffff",
