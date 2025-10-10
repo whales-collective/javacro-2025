@@ -18,5 +18,5 @@ paginate: true
 
 
 </br></br></br></br></br>
-
+> https://github.com/whales-collective/javacro-2025
 #### 🤗 Many thanks to the **JavaCro team** and thank you **all** for being here

@@ -13,12 +13,12 @@ const chatModel = new ChatOpenAI({
   },
   temperature: parseFloat(process.env.OPTION_TEMPERATURE) || 0.0,
   top_p: parseFloat(process.env.OPTION_TOP_P) || 0.5,
-  top_k: parseInt(process.env.OPTION_TOP_K) || 10,
-  repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
-  presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
-  max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
-  min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
-  
+  // top_k: parseInt(process.env.OPTION_TOP_K) || 10,
+  // repeat_penalty: parseFloat(process.env.OPTION_REPEAT_PENALTY) || 2.2,
+  // presence_penalty: parseFloat(process.env.OPTION_PRESENCE_PENALTY) || 1.5,
+  // max_tokens: parseInt(process.env.OPTION_MAX_TOKENS) || 350,
+  // min_p: parseFloat(process.env.OPTION_MIN_P) || 0.05,
+
 });
 
 // SYSTEM INSTRUCTIONS: 

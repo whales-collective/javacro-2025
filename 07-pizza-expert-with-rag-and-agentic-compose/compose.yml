@@ -8,7 +8,7 @@ services:
       TERM: xterm-256color
 
       HISTORY_MESSAGES: 2
-      MAX_SIMILARITIES: 2
+      MAX_SIMILARITIES: 3
       
       OPTION_TEMPERATURE: 0.0
       OPTION_TOP_P: 0.75
@@ -18,8 +18,8 @@ services:
       # OPTION_MAX_TOKENS: 160
       # OPTION_MIN_P: 0.1
 
-      CHUNK_SIZE: 768
-      CHUNK_OVERLAP: 256
+      CHUNK_SIZE: 512
+      CHUNK_OVERLAP: 128
 
       SYSTEM_INSTRUCTIONS_PATH: /app/docs/system-instructions.md
       CONTENT_PATH: /app/data    
@@ -42,8 +42,11 @@ services:
 
 models:
   chat-model:
+    #model: ai/granite-4.0-micro:latest	
+    model: ai/qwen2.5:0.5B-F16 
     #model: ai/qwen2.5:1.5B-F16
-    model: ai/qwen2.5:0.5B-F16  
+    #context_size: 16384
+    #context_size: 8192
 
   embedding-model:
     #model: ai/mxbai-embed-large:2.0-F16
