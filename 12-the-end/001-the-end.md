@@ -6,6 +6,6 @@ paginate: true
 # 🎉 The End
 
 ## 🙏 Thank you for your attention!
-## 🤗 Thank you JavaCro for the invitation!
+## 🤗 Thank you again JavaCro for the invitation!
 
 ## Questions?

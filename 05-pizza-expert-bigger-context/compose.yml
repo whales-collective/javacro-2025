@@ -7,13 +7,13 @@ services:
     environment:
       TERM: xterm-256color
 
-      OPTION_TEMPERATURE: 0.15
+      OPTION_TEMPERATURE: 0.0
       OPTION_TOP_P: 0.75
-      OPTION_TOP_K: 15
-      OPTION_REPEAT_PENALTY: 1.3
-      OPTION_PRESENCE_PENALTY: 1.7
-      OPTION_MAX_TOKENS: 160
-      OPTION_MIN_P: 0.1
+      # OPTION_TOP_K: 15
+      # OPTION_REPEAT_PENALTY: 1.3
+      # OPTION_PRESENCE_PENALTY: 1.7
+      # OPTION_MAX_TOKENS: 160
+      # OPTION_MIN_P: 0.1
 
       SYSTEM_INSTRUCTIONS_PATH: /app/docs/system-instructions.md
       CONTENT_PATH: /app/data    
@@ -35,5 +35,8 @@ services:
 models:
   chat-model:
     #model: ai/granite-4.0-micro:latest	
-    model: ai/qwen2.5:1.5B-F16
-    #model: ai/qwen2.5:0.5B-F16   
+    model: ai/qwen2.5:0.5B-F16 
+    #context_size: 8192
+    #model: ai/qwen2.5:1.5B-F16
+    #context_size: 16384
+      
