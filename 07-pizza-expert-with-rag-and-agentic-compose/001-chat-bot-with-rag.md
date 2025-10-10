@@ -11,7 +11,7 @@ paginate: true
 </style>
 # Bob the Chat Bot with **RAG**
 > **2 Models**:
-> - **Embedding model** to search for relevant information
+> - **Embedding model** to search for/extract **relevant information**
 > - **Chat model** to answer questions
 
 > **Fixed number of history messages** 

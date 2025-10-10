@@ -10,9 +10,10 @@ paginate: true
 </style>
 
 # RAG: retrieval augmented generation
-> Breaking information into chunks
+
 
 ## RAG will help to make the context 
-### - smaller and 
+### - **smaller** and 
 ### - more relevant
+## By Breaking information into **chunks**
 
